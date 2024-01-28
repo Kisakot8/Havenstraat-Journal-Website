@@ -145,22 +145,24 @@ body {
     background-color: aqua;
     overflow: hidden;
     justify-content: center;
-    display: inline-flex;
+    display: flex;
     flex-direction: column;
-    align-items: stretch;
 }
 
 .article-thumbnail {
     position: relative;
-    flex: 3 1 auto;
+    height: 200px;
+    object-fit: cover;
 }
 
 .article-title {
     position: relative;
     flex: 3 1 auto;
+    margin: 16px 12px;
 }
 
 .article-author {
     position: relative;
-    flex: 1 1 auto;
+    left: 10px;
+    bottom: 20px;
 }
