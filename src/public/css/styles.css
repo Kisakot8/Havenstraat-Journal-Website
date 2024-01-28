@@ -28,12 +28,16 @@ body {
     justify-content: center;
     justify-self: center;
     padding: 3rem;
-    font-family: "Chivo Mono", monospace;
-    font-optical-sizing: auto;
-    font-weight: 600;
-    font-style: normal;
+
 }
 
+#title {
+    font-family: "Chivo Mono", monospace;
+    font-optical-sizing: auto;
+    font-weight: 900;
+    font-style: normal;
+    font-size: 3rem;
+}
 
 /* Navbar Section CSS */
 
@@ -163,7 +167,12 @@ body {
     height: 200px;
     object-fit: cover;
     border-bottom: 4px solid var(--blue);
+    transition: inherit;
 }
+
+/* .article-card:hover .article-thumbnail {
+    transform: scale(1.2);
+} */
 
 .article-title {
     z-index: inherit;
