@@ -1,7 +1,7 @@
 const articlesContainer = document.querySelector(".articles-container");
 
 document.addEventListener('DOMContentLoaded', function() {
-    titles = titles.split('%%%');
+    globalThis.titles = titlesString.split('%%%');
     titles.pop();
 
     for (let i = 0; i < titles.length; i++) {
@@ -23,7 +23,17 @@ function init() {
 function createArticleDiv(index) {
     const articleDiv = document.createElement("div");
     articleDiv.className = "article-card";
-    articleDiv.style.backgroundImage = `url("./articles/${index}/thumbnail.webp")`;
+
+    const thumbnail = document.createElement("img");
+    thumbnail.className = 'article-thumbnail';
+    thumbnail.src = `./articles/${index}/thumbnail.webp`;
+
+    const title = document.createElement("h2");
+    title.className = 'article-title';
+    title.textContent = titles[index-1];
+
+    articleDiv.appendChild(thumbnail);
+    articleDiv.appendChild(title);
 
     articlesContainer.appendChild(articleDiv);
 }
