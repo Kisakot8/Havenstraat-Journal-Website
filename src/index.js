@@ -20,12 +20,7 @@ app.get('/', (req, res) => {
         titles += title + '%%%';
     }
 
-    var data = {
-        'titles' : titles,
-        'articleCount' : articleCount
-    };
-
-    res.render('index', { 'data' : jsonUtils.encodeJSON(data) }); // render the main file
+    res.render('index', { 'titles' : titles, 'articleCount' : articleCount }); // render the main file & transfer variables from server to client
 });
 
 

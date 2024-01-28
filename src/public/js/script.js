@@ -1,19 +1,16 @@
 const articlesContainer = document.querySelector(".articles-container");
 
 document.addEventListener('DOMContentLoaded', function() {
-    var scriptElements = document.querySelectorAll('script[data-text]');
-
-    globalThis.titles = scriptElements[0].getAttribute('data-text').split('%%%');
+    titles = titles.split('%%%');
     titles.pop();
 
     for (let i = 0; i < titles.length; i++) {
         console.log(titles[i]);
     }
 
+    init();
 });
 
-
-window.onload = init();
 
 function init() {
     for (let i = 0; i < articleCount; i++) {
