@@ -1,4 +1,4 @@
-# Havenstraat Journal Website
+# School Journal Website
 
 ## Todo:
 - Store articles with text, images, and tags
