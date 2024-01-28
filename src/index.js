@@ -1,26 +1,32 @@
-const { readFile, readFileSync } = require("fs");
-const meow = require("./testModule");
-const express = require("express");
-
+const { readFile, readFileSync, readdir } = require('fs');
+const express = require('express');
 const app = express();
-app.use(express.static("public"));
 
-const txt = readFileSync("./public/articles/1/title.txt", "utf-8");
+app.set('view engine', 'ejs');
+app.use(express.static(__dirname + '/public'));
 
 
-app.get("/", (request, response) => {
-    readFile("./public/html/index.html", "utf-8", (err, html) => {
+const articlesDir = './public/articles';
 
-        if (err) {
-            response.status(500).send("sorry my website broke again lmao");
-        }
+readdir(articlesDir, (err, files) => {
+    global.articleCount = files.length;
+});
 
-        response.send(html);
-    });
 
+app.get('/', (req, res) => {
+    var titles = "";
+    for (let index = 1; index <= articleCount; index++) {
+        const title = readFileSync(`${articlesDir}/${index}/title.txt`, 'utf-8');
+        titles += title + '%%%';
+    }
+
+    var data = {
+        'titles' : titles,
+        'articleCount' : articleCount
+    };
+
+    res.render('index', { 'data' : jsonUtils.encodeJSON(data) }); // render the main file
 });
 
 
 app.listen(process.env.PORT || 3000, () => console.log(`App available on http://localhost:3000`))
-
-module.exports = { txt };

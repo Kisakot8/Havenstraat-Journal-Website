@@ -1,14 +1,22 @@
-import txt from "../index.js";
-console.log(txt);
-
 const articlesContainer = document.querySelector(".articles-container");
 
-const counter = 1; // CHANGE LATER - NUMBER OF ARTICLES!
+document.addEventListener('DOMContentLoaded', function() {
+    var scriptElements = document.querySelectorAll('script[data-text]');
+
+    globalThis.titles = scriptElements[0].getAttribute('data-text').split('%%%');
+    titles.pop();
+
+    for (let i = 0; i < titles.length; i++) {
+        console.log(titles[i]);
+    }
+
+});
+
 
 window.onload = init();
 
 function init() {
-    for (let i = 0; i < counter; i++) {
+    for (let i = 0; i < articleCount; i++) {
         console.log(`pass ${i}`)
         createArticleDiv(i);
     }
@@ -19,7 +27,7 @@ function createArticleDiv(index) {
     const articleDiv = document.createElement("div");
     articleDiv.className = "article-card";
 
-    let thumbnail = new Image();
+    var thumbnail = new Image();
     thumbnail.src = ``;
     articleDiv.style.backgroundImage = ``;
 
