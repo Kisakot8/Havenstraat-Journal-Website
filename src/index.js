@@ -15,12 +15,20 @@ readdir(articlesDir, (err, files) => {
 
 app.get('/', (req, res) => {
     var titles = "";
+    var authors = "";
     for (let index = 1; index <= articleCount; index++) {
         const title = readFileSync(`${articlesDir}/${index}/title.txt`, 'utf-8');
         titles += title + '%%%';
+
+        const author = readFileSync(`${articlesDir}/${index}/author.txt`, 'utf-8');
+        authors += author + '%%%';
     }
 
-    res.render('index', { 'titles' : titles, 'articleCount' : articleCount }); // render the main file & transfer variables from server to client
+    res.render('index', { // render the main file & transfer variables from server to client
+        'titles' : titles,
+        'authors': authors,
+        'articleCount' : articleCount
+    }); 
 });
 
 

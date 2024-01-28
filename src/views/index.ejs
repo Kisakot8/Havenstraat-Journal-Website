@@ -36,7 +36,8 @@
     <script src="/js/script.js"></script>
 
     <script type="text/javascript">
-        var titlesString = '<%= titles %>';
+        var titles = '<%= titles %>'.split('%%%').slice(0, -1);
+        var authorsString = '<%= authors %>'.split('%%%').slice(0, -1);
         var articleCount = '<%= articleCount %>';
     </script>
 

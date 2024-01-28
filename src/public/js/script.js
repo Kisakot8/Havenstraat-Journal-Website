@@ -1,20 +1,10 @@
 const articlesContainer = document.querySelector(".articles-container");
 
-document.addEventListener('DOMContentLoaded', function() {
-    globalThis.titles = titlesString.split('%%%');
-    titles.pop();
-
-    for (let i = 0; i < titles.length; i++) {
-        console.log(titles[i]);
-    }
-
-    init();
-});
+document.addEventListener('DOMContentLoaded', init);
 
 
 function init() {
     for (let i = 1; i <= articleCount; i++) {
-        // console.log(`pass ${i}`)
         createArticleDiv(i);
     }
 }
