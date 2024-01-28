@@ -13,8 +13,8 @@ document.addEventListener('DOMContentLoaded', function() {
 
 
 function init() {
-    for (let i = 0; i < articleCount; i++) {
-        console.log(`pass ${i}`)
+    for (let i = 1; i <= articleCount; i++) {
+        // console.log(`pass ${i}`)
         createArticleDiv(i);
     }
 }
@@ -23,10 +23,7 @@ function init() {
 function createArticleDiv(index) {
     const articleDiv = document.createElement("div");
     articleDiv.className = "article-card";
-
-    var thumbnail = new Image();
-    thumbnail.src = ``;
-    articleDiv.style.backgroundImage = ``;
+    articleDiv.style.backgroundImage = `url("./articles/${index}/thumbnail.webp")`;
 
     articlesContainer.appendChild(articleDiv);
 }
