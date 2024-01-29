@@ -171,15 +171,18 @@ body {
     display: flex;
     justify-content: center;
     align-items: center;
+    overflow: hidden;
 }
 
 .article-thumbnail {
     display: block;
     margin: auto;
+    height: 100%;
+    transition: 1s all;
 }
 
-.article-thumbnail {
-    height: 100%;
+.article-card:hover .article-thumbnail {
+    transform: scale(1.1);
 }
 
 .article-title {
