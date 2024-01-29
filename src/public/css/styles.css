@@ -161,18 +161,26 @@ body {
     box-shadow: 8px 8px 0 0 #DB0404;
 }
 
-.article-thumbnail {
+.article-thumbnail-container {
     z-index: inherit;
     position: relative;
     height: 200px;
     object-fit: cover;
     border-bottom: 4px solid var(--blue);
     transition: inherit;
+    display: flex;
+    justify-content: center;
+    align-items: center;
 }
 
-/* .article-card:hover .article-thumbnail {
-    transform: scale(1.2);
-} */
+.article-thumbnail {
+    display: block;
+    margin: auto;
+}
+
+.article-thumbnail {
+    height: 100%;
+}
 
 .article-title {
     z-index: inherit;
