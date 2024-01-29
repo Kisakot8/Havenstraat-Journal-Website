@@ -36,8 +36,10 @@
     <script src="/js/script.js"></script>
 
     <script type="text/javascript">
-        var titles = '<%= titles %>'.split('%%%').slice(0, -1);
-        var authors = '<%= authors %>'.split('%%%').slice(0, -1);
+        const splitter = '<%= splitter %>';
+        var titles = '<%= titles %>'.split(splitter).slice(0, -1);
+        var authors = '<%= authors %>'.split(splitter).slice(0, -1);
+        var thumbnailExts = '<%= thumbnailExts %>'.split(splitter).slice(0, -1);
         var articleCount = '<%= articleCount %>';
     </script>
 

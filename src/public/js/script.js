@@ -19,7 +19,7 @@ function articleConstructor(index) {
 
     const thumbnail = document.createElement('img');
     thumbnail.className = 'article-thumbnail';
-    thumbnail.src = `./articles/${index+1}/thumbnail.webp`;
+    thumbnail.src = `./articles/${index+1}/thumbnail.${thumbnailExts[index]}`;
 
     const title = document.createElement('h2');
     title.className = 'article-title';

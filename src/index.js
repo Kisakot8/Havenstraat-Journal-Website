@@ -1,4 +1,4 @@
-const { readFile, readFileSync, readdir } = require('fs');
+const { readFile, readFileSync, readdir, readdirSync } = require('fs');
 const express = require('express');
 const app = express();
 
@@ -7,6 +7,7 @@ app.use(express.static(__dirname + '/public'));
 
 
 const articlesDir = './public/articles';
+const splitter = '%%%';
 
 readdir(articlesDir, (err, files) => {
     global.articleCount = files.length;
@@ -16,18 +17,29 @@ readdir(articlesDir, (err, files) => {
 app.get('/', (req, res) => {
     var titles = "";
     var authors = "";
-    for (let index = 1; index <= articleCount; index++) {
-        const title = readFileSync(`${articlesDir}/${index}/title.txt`, 'utf-8');
-        titles += title + '%%%';
+    var thumbnailExts = "";
+    for (let i = 1; i <= articleCount; i++) {
+        const title = readFileSync(`${articlesDir}/${i}/title.txt`, 'utf-8');
+        titles += title + splitter;
 
-        const author = readFileSync(`${articlesDir}/${index}/author.txt`, 'utf-8');
-        authors += author + '%%%';
+        const author = readFileSync(`${articlesDir}/${i}/author.txt`, 'utf-8');
+        authors += author + splitter;
+
+        const files = readdirSync(`${articlesDir}/${i}`);
+        for (const file of files) {
+            splitFile = file.split('.');
+            if (splitFile.slice(0, -1).join('.') === 'thumbnail') {
+                thumbnailExts += splitFile[splitFile.length - 1] + splitter;
+            }
+        }
     }
 
     res.render('index', { // render the main file & transfer variables from server to client
         'titles' : titles,
         'authors': authors,
-        'articleCount' : articleCount
+        'thumbnailExts' : thumbnailExts,
+        'articleCount' : articleCount,
+        'splitter' : splitter,
     }); 
 });
 
