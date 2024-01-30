@@ -20,13 +20,13 @@
     <nav id="navbar">
         <div class="navbar-container">
             <nav id="navbar-menu">
-                <a href="#" class="navbar-links current-section"> Articles </a>
-                <a href="#" class="navbar-links"> Entertainment </a>
-                <a href="#" class="navbar-links"> Politics </a>
-                <a href="#" class="navbar-links"> Philosophy </a>
-                <a href="#" class="navbar-links"> Geography </a>
-                <a href="#" class="navbar-links"> History </a>
-                <a href="#" class="navbar-links"> About Us </a>
+                <a class="navbar-links current-section" id="all-link"> Articles </a>
+                <a class="navbar-links" id="entmt-link"> Entertainment </a>
+                <a class="navbar-links" id="pol-link"> Politics </a>
+                <a class="navbar-links" id="phil-link"> Philosophy </a>
+                <a class="navbar-links" id="geo-link"> Geography </a>
+                <a class="navbar-links" id="his-link"> History </a>
+                <a class="navbar-links" id="about-link"> About Us </a>
             </nav>
         </div>
     </nav>
@@ -38,10 +38,9 @@
 
     <script type="text/javascript">
         const splitter = '<%= splitter %>';
-        var titles = '<%= titles %>'.split(splitter).slice(0, -1);
-        var authors = '<%= authors %>'.split(splitter).slice(0, -1);
         var thumbnailExts = '<%= thumbnailExts %>'.split(splitter).slice(0, -1);
         var articleCount = '<%= articleCount %>';
+        var data = <%- JSON.stringify(data) %>;
     </script>
 
 </body>
