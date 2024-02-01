@@ -1,7 +1,7 @@
 export default {
-    name: 'pet',
+    name: 'Tag',
     type: 'document',
-    title: 'Pet',
+    title: 'Tag',
     fields: [
         {
             name: 'name',
