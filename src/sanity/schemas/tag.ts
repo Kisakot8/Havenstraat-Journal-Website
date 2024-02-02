@@ -1,5 +1,5 @@
 export default {
-    name: 'Tag',
+    name: 'tag',
     type: 'document',
     title: 'Tag',
     fields: [
