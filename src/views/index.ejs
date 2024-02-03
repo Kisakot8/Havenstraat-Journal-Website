@@ -36,10 +36,34 @@
     <script src="/js/script.js"></script>
 
     <script type="text/javascript">
-        const splitter = '<%= splitter %>';
-        var thumbnailExts = '<%= thumbnailExts %>'.split(splitter).slice(0, -1);
-        var articleCount = '<%= articleCount %>';
-        var data = <%- JSON.stringify(data) %>;
+        const PROJECT_ID = "x4lq3c0a";
+        const DATASET = "production";
+
+        const QUERY = encodeURIComponent(`
+*[_type == "article"] {
+  "slug": slug.current,
+  title,
+    author->{
+      name,
+      nickname
+    },
+  "imageUrl": thumbnail.asset->url,
+  "pdfUrl": articlePDF.asset->url,
+  "tags": tags[]->name
+}
+`
+        );
+
+        const URL = `https://${PROJECT_ID}.api.sanity.io/v2022-03-07/data/query/${DATASET}?query=${QUERY}`;
+
+        fetch(URL)
+        .then((res) => res.json())
+        .then(({ result }) => {
+            data = result;
+            init();
+          })
+        .catch((err) => console.error(err));
+
     </script>
 
 </body>

@@ -1,22 +1,20 @@
 const articlesContainer = document.querySelector('.articles-container');
 
-document.addEventListener('DOMContentLoaded', init);
-
 
 function init() {
-    for (let i = 0; i < articleCount; i++) {
-        articleConstructor(i);
+    for (let i = 0; i < data.length; i++) {
+        articleConstructor(data[i], i);
     }
+    console.log('I LIVE!');
 }
 
 
-function articleConstructor(index) {
+function articleConstructor(article, index) {
     const articleDiv = document.createElement('div');
     articleDiv.className = 'article-card';
-    articleDiv.id = `article-${index+1}`;
+    articleDiv.id = `article-${index}`;
 
-    for (const j in data[index+1]['tags']) {
-        const tag = data[index+1]['tags'][j];
+    for (let tag of article.tags) {
         articleDiv.classList.add(tag);
     }
 
@@ -26,18 +24,18 @@ function articleConstructor(index) {
 
     const thumbnail = document.createElement('img');
     thumbnail.className = 'article-thumbnail';
-    thumbnail.src = `./articles/${index+1}/thumbnail.${thumbnailExts[index]}`;
+    thumbnail.src = article.imageUrl;
 
     thumbnailContainer.appendChild(thumbnail);
 
 
     const title = document.createElement('h2');
     title.className = 'article-title';
-    title.textContent = data[index+1]['title'];
+    title.textContent = article.title;
 
     const author = document.createElement('h4');
     author.className = 'article-author';
-    author.textContent = `By ${data[index+1]['author']}`;
+    author.textContent = `By ${article.author.name}`;
 
     articleDiv.appendChild(thumbnailContainer);
     articleDiv.appendChild(title);
