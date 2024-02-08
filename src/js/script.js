@@ -1,15 +1,13 @@
-const articlesContainer = document.querySelector('.articles-container');
-
-
 function init() {
     for (let i = 0; i < data.length; i++) {
         articleConstructor(data[i], i);
     }
-    console.log('I LIVE!');
 }
 
 
 function articleConstructor(article, index) {
+    const articlesContainer = document.querySelector('.articles-container');
+
     const articleDiv = document.createElement('div');
     articleDiv.className = 'article-card';
     articleDiv.id = `article-${index}`;

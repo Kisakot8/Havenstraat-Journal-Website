@@ -1,0 +1,23 @@
+/* #region title */
+
+.title-container {
+    height: 40px;
+    display: flex;
+    align-items: center;
+    align-self: center;
+    justify-content: center;
+    justify-self: center;
+    padding: 3rem;
+    background-color: #eee;
+}
+
+#title {
+    font-optical-sizing: auto;
+    font-weight: 900;
+    font-style: normal;
+    font-size: 3rem;
+    color: var(--blue);
+    text-transform: uppercase;
+}
+
+/* #endregion */
