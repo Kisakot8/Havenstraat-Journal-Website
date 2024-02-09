@@ -1,6 +1,10 @@
-function card(title, imgUrl, tags, author) {
-    const articlesContainer = document.querySelector('.articles-container');
+const {html} = require('common-tags');
 
+function card(title, imgUrl, tags, author) {
+    return html`
+    <div class="article-card ${tags.join(' ')}">
+    </div>
+    `
     const articleDiv = document.createElement('div');
     articleDiv.className = 'article-card';
 
