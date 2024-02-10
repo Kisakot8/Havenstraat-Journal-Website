@@ -4,7 +4,9 @@ title: Havenstraat Journal
 ---
 
 <div class="articles-container">
-    {% card 'cat', 'https://picsum.photos/200/300', ['one', 'two'], 'kisakot' %}
+    {% for article in getCards.result %}
+        {% card article.title, article.imageUrl, article.tags, article.author %}
+    {% endfor %}
 </div>
 
 

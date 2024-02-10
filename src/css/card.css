@@ -42,13 +42,14 @@
 
 .article-thumbnail {
     height: 100%;
-    min-width: 100%;
+    width: 100%;
     flex-shrink: 0;
+    object-fit: cover;
     transition: 1s all;
 }
 
 .article-card:hover .article-thumbnail {
-    transform: scale(1.1);
+    transform: scale(1.08);
 }
 
 .article-title {
