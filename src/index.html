@@ -5,7 +5,7 @@ title: Havenstraat Journal
 
 <div class="articles-container">
     {% for article in getCards.result %}
-        {% card article.title, article.imageUrl, article.tags, article.author %}
+        {% card article.title, article.imageUrl, article.tags, article.author, article.pdfUrl %}
     {% endfor %}
 </div>
 
