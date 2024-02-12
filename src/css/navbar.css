@@ -44,6 +44,7 @@
 
 .navbar-links {
     color: var(--blue);
+    text-transform: capitalize;
 }
 
 .navbar-links .current-section::before {

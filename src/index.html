@@ -1,6 +1,7 @@
 ---
 layout: layouts/home.html
 title: Havenstraat Journal
+currentSection: article-card
 ---
 
 <div class="articles-container">
@@ -8,8 +9,3 @@ title: Havenstraat Journal
         {% card article.title, article.imageUrl, article.tags, article.author, article.pdfUrl %}
     {% endfor %}
 </div>
-
-
-
-<!-- {{ getCards.result | dump }} -->
-
