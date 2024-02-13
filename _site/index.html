@@ -23,15 +23,15 @@
         <nav id="navbar-menu">
             <a class="navbar-links" id="article-card-link" href="javascript:showByTag('article-card')"> Articles </a>
             
-                <a class="navbar-links" id="entertainment-link"> entertainment </a>
+                <a class="navbar-links" id="entertainment-link" href="javascript:showByTag('entertainment')"> entertainment </a>
             
-                <a class="navbar-links" id="geography-link"> geography </a>
+                <a class="navbar-links" id="geography-link" href="javascript:showByTag('geography')"> geography </a>
             
-                <a class="navbar-links" id="history-link"> history </a>
+                <a class="navbar-links" id="history-link" href="javascript:showByTag('history')"> history </a>
             
-                <a class="navbar-links" id="philosophy-link"> philosophy </a>
+                <a class="navbar-links" id="philosophy-link" href="javascript:showByTag('philosophy')"> philosophy </a>
             
-                <a class="navbar-links" id="politics-link"> politics </a>
+                <a class="navbar-links" id="politics-link" href="javascript:showByTag('politics')"> politics </a>
             
             <a class="navbar-links" id="about-link"> About Us </a>
         </nav>
@@ -72,6 +72,25 @@
 </div>
     
 </div>
+
+<script type="text/javascript">
+    function showByTag(tag) {
+        all = document.getElementsByClassName('article-card');
+
+        for (let index = 0; index < all.length; index++) {
+            const article = all[index];
+            if (!article.classList.contains(tag)) {
+                article.style.display = 'none';
+            } else { article.style.display = 'flex'; }
+        }
+
+        prevLink = document.querySelector('.current-section');
+        prevLink.classList.remove('current-section');
+
+        newLink = document.getElementById(`${tag}-link`);
+        newLink.classList.add('current-section');
+    }
+</script>
 
 </body>
 </html>
