@@ -1,7 +1,7 @@
 <nav id="navbar">
     <div class="navbar-container">
         <nav id="navbar-menu">
-            <a class="navbar-links" id="article-card-link" href="javascript:showByTag('article-card')"> Articles </a>
+            <a class="navbar-links" id="article-card-link" href="javascript:showByTag('')"> Articles </a>
             {% for name in getTags.result | sort(false, false) %}
                 {% tag name %}
             {% endfor %}

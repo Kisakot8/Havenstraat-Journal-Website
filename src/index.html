@@ -16,7 +16,7 @@ currentSection: article-card
 
         for (let index = 0; index < all.length; index++) {
             const article = all[index];
-            if (!article.classList.contains(tag)) {
+            if (!article.dataset.tags.includes(tag)) {
                 article.style.display = 'none';
             } else { article.style.display = 'flex'; }
         }

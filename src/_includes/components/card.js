@@ -2,7 +2,11 @@ const {html} = require('common-tags');
 
 function card(title, imgUrl, tags, author, pdfUrl) {
     return html`
-    <div class="article-card ${tags.join(' ')}" onclick="window.open('${pdfUrl}');">
+    <div class="article-card"
+    onclick="window.open('${pdfUrl}');"
+    data-tags="${tags.join(' ')}"
+    data-author="${author.name}"
+    >
         <div class="article-thumbnail-container">
             <img class="article-thumbnail" src=${imgUrl} alt="Article thumbnail"></img>
         </div>
