@@ -1,16 +1,17 @@
 <nav id="navbar">
     <div class="navbar-container">
         <nav id="navbar-menu">
-            <a class="navbar-links" id="article-card-link" href="javascript:showByTag('')"> Articles </a>
+            <a class="navbar-links" id="article-card-link" href="/"> Articles </a>
             {% for name in getTags.result | sort(false, false) %}
                 {% tag name %}
             {% endfor %}
-            <a class="navbar-links" id="about-link"> About Us </a>
+            <a class="navbar-links" id="about-link" href="./about"> About Us </a>
         </nav>
     </div>
 </nav>
 
 <script type="text/javascript">
+    console.log('{{ currentSection }}')
     const current = document.getElementById('{{ currentSection }}-link');
     current.classList.add('current-section');
 </script>
