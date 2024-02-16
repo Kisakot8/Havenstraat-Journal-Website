@@ -1,0 +1,21 @@
+---
+pagination:
+  data: getTags.result
+  size: 1
+  resolve: values
+permalink: "tags/{{ pagination.items | slugify }}/index.html"
+
+layout: layouts/home.html
+eleventyComputed:
+    currentSection: "{{ pagination.items | slugify }}"
+    description: "Havenstraat Journal {{ pagination.items | slugify }} page"
+title: Havenstraat Journal
+---
+
+<div class="articles-container">
+    {% for article in getCards.result %}
+        {% if article.tags.includes( pagination.items | slugify ) %}
+            {% card article.title, article.imageUrl, article.tags, article.author, article.pdfUrl %}
+        {% endif %}
+    {% endfor %}
+</div>

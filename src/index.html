@@ -2,11 +2,12 @@
 layout: layouts/home.html
 title: Havenstraat Journal
 currentSection: article-card
+description: Havenstraat Journal website homepage
 ---
 
 <div class="articles-container">
     {% for article in getCards.result %}
-        {% card article.title, article.imageUrl, article.tags, article.author, article.pdfUrl %}
+        {% card article.title, article.imageUrl, article.tags, article.author, article.slug %}
     {% endfor %}
 </div>
 

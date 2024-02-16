@@ -11,7 +11,8 @@
 </nav>
 
 <script type="text/javascript">
-    console.log('{{ currentSection }}')
-    const current = document.getElementById('{{ currentSection }}-link');
-    current.classList.add('current-section');
+    if ('{{ currentSection }}' != '') {
+        const current = document.getElementById('{{ currentSection }}-link');
+        current.classList.add('current-section');
+    }
 </script>
