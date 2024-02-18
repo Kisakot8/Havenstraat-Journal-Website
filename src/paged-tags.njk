@@ -8,14 +8,17 @@ permalink: "tags/{{ pagination.items | slugify }}/index.html"
 layout: layouts/home.html
 eleventyComputed:
     currentSection: "{{ pagination.items | slugify }}"
-    description: "Havenstraat Journal {{ pagination.items | slugify }} page"
-title: Havenstraat Journal
+    description: "{{ getSecrets.name }} {{ pagination.items | slugify }} page"
+    designer: "{{ getSecrets.designer }}"
+    title: "{{ getSecrets.name }}"
+    insta_link: "{{ getSecrets.insta_link }}"
+    designer_link: "{{ getSecrets.designer_link }}"
 ---
 
 <div class="articles-container">
     {% for article in getCards.result %}
         {% if article.tags.includes( pagination.items | slugify ) %}
-            {% card article.title, article.imageUrl, article.tags, article.author, article.pdfUrl %}
+            {% card article.title, article.imageUrl, article.tags, article.author, article.slug %}
         {% endif %}
     {% endfor %}
 </div>

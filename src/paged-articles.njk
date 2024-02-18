@@ -1,12 +1,15 @@
 ---
 pagination:
-  data: getCards.result
-  size: 1
-  resolve: values
+    data: getCards.result
+    size: 1
+    resolve: values
 permalink: "articles/{{ pagination.items[0].slug | slugify }}/index.html"
 
 layout: layouts/article.html
 eleventyComputed:
-    description: "Havenstraat Journal article '{{ pagination.items[0].title }}' page"
-title: Havenstraat Journal
+    description: "{{ getSecrets.name }} article '{{ pagination.items[0].title }}' page"
+    designer: "{{ getSecrets.designer }}"
+    title: "{{ pagination.items[0].title }} | {{ getSecrets.name }}"
+    insta_link: "{{ getSecrets.insta_link }}"
+    designer_link: "{{ getSecrets.designer_link }}"
 ---

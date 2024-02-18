@@ -1,8 +1,12 @@
 ---
 layout: layouts/home.html
-title: Havenstraat Journal
 currentSection: article-card
-description: Havenstraat Journal website homepage
+eleventyComputed:
+    title: "{{ getSecrets.name }}"
+    description: "{{ getSecrets.name }} Homepage"
+    designer: "{{ getSecrets.designer }}"
+    insta_link: "{{ getSecrets.insta_link }}"
+    designer_link: "{{ getSecrets.designer_link }}"
 ---
 
 <div class="articles-container">
