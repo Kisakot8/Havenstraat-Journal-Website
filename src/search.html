@@ -1,0 +1,39 @@
+---
+layout: layouts/home.html
+currentSection: search
+eleventyComputed:
+    title: "{{ getSecrets.name }}"
+    description: "{{ getSecrets.name }} Homepage"
+    designer: "{{ getSecrets.designer }}"
+    insta_link: "{{ getSecrets.insta_link }}"
+    designer_link: "{{ getSecrets.designer_link }}"
+---
+
+<div class="search-container">
+    <div class="search-box">
+        <input type="text" name="search" placeholder="Search {{ getCards.result.length }} articles... ">
+        <a href="#">
+            <i class="fa-solid fa-magnifying-glass" id="search-bar-icon"></i>
+        </a>
+    </div>
+    <div class="lower-search-container">
+        <div class="filters">
+            <select name="issue" id="issue-select">
+                {% for issue in getIssues.result %}
+                    <option value="{{ issue.number }}">Issue #{{ issue.number }}</option>
+                {% endfor %}
+            </select>
+            <select name="author" id="author-select">
+                {% for author in getAuthors.result %}
+                    <option value="{{ author.name }}">By {{ author.name }}</option>
+                {% endfor %}
+            </select>
+            <select name="tag" id="tag-select">
+                {% for tag in getTags.result %}
+                    <option value="{{ tag }}">{{ tag }}</option>
+                {% endfor %}
+            </select>
+        </div>
+        <div class="results"></div>
+    </div>
+</div>

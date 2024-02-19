@@ -11,9 +11,9 @@ export default defineType({
             title: 'Number'
         }),
         defineField({
-            name: 'issues',
+            name: 'articles',
             type: 'array',
-            title: 'Issues',
+            title: 'Articles',
             of: [{type: 'reference', to: {type: 'article'}}]
         })
     ]

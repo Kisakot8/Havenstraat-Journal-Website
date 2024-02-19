@@ -5,7 +5,8 @@
             {% for name in getTags.result | sort(false, false) %}
                 {% tag name %}
             {% endfor %}
-            <a class="navbar-links" id="about-link" href="./about"> About Us </a>
+            <a class="navbar-links" id="about-link" href="/about"> About Us </a>
+            <a class="navbar-links" id="search-link"  href="/search"> <i class="fa-solid fa-magnifying-glass"></i> </a>
         </nav>
     </div>
 </nav>
