@@ -5,8 +5,10 @@ const tag = require('./src/_includes/components/tag')
 module.exports = function(eleventyConfig) {
     eleventyConfig.addPassthroughCopy('src/assets/');
     eleventyConfig.addPassthroughCopy('src/css/');
+    eleventyConfig.addPassthroughCopy('src/js/');
 
     eleventyConfig.addWatchTarget('src/css');
+    eleventyConfig.addWatchTarget('src/js');
 
     // NOTE: components WILL NOT change on refresh if edited - need to restart server!
     eleventyConfig.addShortcode('card', card);

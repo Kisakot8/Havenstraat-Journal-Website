@@ -18,22 +18,58 @@ eleventyComputed:
     </div>
     <div class="lower-search-container">
         <div class="filters">
-            <select name="issue" id="issue-select">
-                {% for issue in getIssues.result %}
-                    <option value="{{ issue.number }}">Issue #{{ issue.number }}</option>
-                {% endfor %}
-            </select>
-            <select name="author" id="author-select">
-                {% for author in getAuthors.result %}
-                    <option value="{{ author.name }}">By {{ author.name }}</option>
-                {% endfor %}
-            </select>
-            <select name="tag" id="tag-select">
-                {% for tag in getTags.result %}
-                    <option value="{{ tag }}">{{ tag }}</option>
-                {% endfor %}
-            </select>
+
+            <div class="filter-header">
+                <h2 class="input-title">Issues</h2>
+                <label class="checkbox-container selector-all">
+                    <input type="checkbox" id="issue-selector-all">
+                    <span class="checkmark"></span>
+                    <span class="input-label"></span>
+                </label>
+            </div>
+            {% for issue in getIssues.result %}
+                <label class="checkbox-container">
+                    <input type="checkbox" checked="checked" class="issue-checkbox" id="issue-{{ issue.number }}">
+                    <span class="checkmark"></span>
+                    <span class="input-label">Issue #{{ issue.number }}</span>
+                </label>
+            {% endfor %}
+
+            <div class="filter-header">
+                <h2 class="input-title">Authors</h2>
+                <label class="checkbox-container selector-all">
+                    <input type="checkbox" id="author-selector-all">
+                    <span class="checkmark"></span>
+                    <span class="input-label"></span>
+                </label>
+            </div>
+            {% for author in getAuthors.result %}
+                <label class="checkbox-container">
+                    <input type="checkbox" checked="checked" class="author-checkbox" id="author-{{ author.slug | slugify }}">
+                    <span class="checkmark"></span>
+                    <span class="input-label">{{ author.name }}</span>
+                </label>
+            {% endfor %}
+
+            <div class="filter-header">
+                <h2 class="input-title">Categories</h2>
+                <label class="checkbox-container selector-all">
+                    <input type="checkbox" id="tag-selector-all">
+                    <span class="checkmark"></span>
+                    <span class="input-label"></span>
+                </label>
+            </div>
+            {% for tag in getTags.result %}
+                <label class="checkbox-container">
+                    <input type="checkbox" checked="checked" class="tag-checkbox" id="tag-{{ tag | slugify }}">
+                    <span class="checkmark"></span>
+                    <span class="input-label">{{ tag }}</span>
+                </label>
+            {% endfor %}
         </div>
         <div class="results"></div>
     </div>
 </div>
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+<script src="/js/search.js" type="text/javascript"></script>
