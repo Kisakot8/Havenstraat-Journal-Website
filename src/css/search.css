@@ -1,4 +1,6 @@
-.search-container {
+/* search-container contains the entire search.html */
+
+#search-container {
     margin: 32px 0;
     display: flex;
     flex-direction: column;
@@ -8,7 +10,7 @@
 
 /* #region search box */
 
-.search-box {
+#search-box {
     margin: auto;
     height: 64px;
     width: 736px;
@@ -19,14 +21,19 @@
     background-color: #fff;
     border-radius: 30px;
     border: 3px solid var(--blue);
-    transition: .3s all;
+    transition: .2s all;
 }
 
-.search-box:hover {
-    box-shadow: 0 5px rgba(0, 0, 0, .3);
+#search-box:hover {
+    box-shadow: 0 5px rgba(0, 0, 0, .2);
+    border-color: var(--red);
 }
 
-.search-box input {
+#search-box:hover #search-bar-icon {
+    color: var(--red);
+}
+
+#search-box input {
     outline: none;
     border: none;
     width: 100%;
@@ -38,12 +45,21 @@
     font-weight: 600;
     font-size: 1.5rem;
     padding: 2px;
+    transition: .2s all;
+}
+
+#search-bar-button {
+    border: none;
+    background: none;
+    cursor: pointer;
 }
 
 /* #endregion */
 
 
-.lower-search-container {
+/* lower-search-container contains the filters and results */
+
+#lower-search-container {
     margin-top: 32px;
     position: relative;
     display: flex;
@@ -55,7 +71,7 @@
 
 /* #region filters */
 
-.filters {
+#filters-container {
     display: flex;
     flex-direction: column;
     margin: 0 16px;
@@ -160,6 +176,51 @@
 
 /* #region results */
 
+#results-container {
+    display: flex;
+    flex-direction: row;
+    width: 100%;
+}
 
+.default-text {
+    position: absolute;
+    left: 40%;
+    top: 30%;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    color: #999;
+    font-size: 2rem;
+    justify-self: center;
+    font-weight: 400;
+    width: 30%;
+}
+
+.cycle-container {
+    display: flex;
+    left: 100%;
+}
+
+.cycle-item {
+    opacity: 0;
+    position: absolute;
+    top: -100%;
+    font-weight: 700;
+    width: 100%;
+    cursor: default;
+}
+
+.cycle-item-appearing {
+    opacity: 1;
+    top: 0;
+    transition: .3s all;
+    cursor: text;
+}
+
+.cycle-item-disappearing {
+    opacity: 0 !important;
+    top: 100% !important;
+    cursor: default !important;
+}
 
 /* #endregion */

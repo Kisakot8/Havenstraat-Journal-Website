@@ -9,15 +9,15 @@ eleventyComputed:
     designer_link: "{{ getSecrets.designer_link }}"
 ---
 
-<div class="search-container">
-    <div class="search-box">
+<div id="search-container">
+    <div id="search-box">
         <input type="text" name="search" placeholder="Search {{ getCards.result.length }} articles... ">
-        <a href="#">
+        <button id="search-bar-button">
             <i class="fa-solid fa-magnifying-glass" id="search-bar-icon"></i>
-        </a>
+        </button>
     </div>
-    <div class="lower-search-container">
-        <div class="filters">
+    <div id="lower-search-container">
+        <div id="filters-container">
 
             <div class="filter-header">
                 <h2 class="input-title">Issues</h2>
@@ -67,7 +67,22 @@ eleventyComputed:
                 </label>
             {% endfor %}
         </div>
-        <div class="results"></div>
+        <div id="results-container">
+            <h4 class="default-text">
+                Search for... &nbsp;
+                <div class="cycle-container">
+                    {% for tag in getTags.result %}
+                        <span class="cycle-item">{{ tag }}</span>
+                    {% endfor %}
+                    {% for author in getAuthors.result %}
+                        <span class="cycle-item">{{ author.name }}</span>
+                    {% endfor %}
+                    {% for issue in getIssues.result %}
+                        <span class="cycle-item">Issue #{{ issue.number }}</span>
+                    {% endfor %}
+                </div>
+            </h4>
+        </div>
     </div>
 </div>
 
