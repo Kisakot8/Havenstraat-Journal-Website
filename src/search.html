@@ -12,7 +12,7 @@ eleventyComputed:
 <div id="search-container">
     <div id="search-box">
         <input type="text" name="search" placeholder="Search {{ getCards.result.length }} articles... ">
-        <button id="search-bar-button">
+        <button id="search-bar-button" onclick="search('{{ getIssues.result | dump }}');">
             <i class="fa-solid fa-magnifying-glass" id="search-bar-icon"></i>
         </button>
     </div>
@@ -29,7 +29,7 @@ eleventyComputed:
             </div>
             {% for issue in getIssues.result %}
                 <label class="checkbox-container">
-                    <input type="checkbox" checked="checked" class="issue-checkbox" id="issue-{{ issue.number }}">
+                    <input type="checkbox" checked="checked" class="issue-checkbox" data-issue="{{ issue.number }}">
                     <span class="checkmark"></span>
                     <span class="input-label">Issue #{{ issue.number }}</span>
                 </label>
@@ -45,7 +45,7 @@ eleventyComputed:
             </div>
             {% for author in getAuthors.result %}
                 <label class="checkbox-container">
-                    <input type="checkbox" checked="checked" class="author-checkbox" id="author-{{ author.slug | slugify }}">
+                    <input type="checkbox" checked="checked" class="author-checkbox" data-author="{{ author.slug | slugify }}">
                     <span class="checkmark"></span>
                     <span class="input-label">{{ author.name }}</span>
                 </label>
@@ -61,15 +61,15 @@ eleventyComputed:
             </div>
             {% for tag in getTags.result %}
                 <label class="checkbox-container">
-                    <input type="checkbox" checked="checked" class="tag-checkbox" id="tag-{{ tag | slugify }}">
+                    <input type="checkbox" checked="checked" class="tag-checkbox" data-tag="{{ tag | slugify }}">
                     <span class="checkmark"></span>
                     <span class="input-label">{{ tag }}</span>
                 </label>
             {% endfor %}
         </div>
         <div id="results-container">
-            <h4 class="default-text">
-                Search for... &nbsp;
+            <h4 id="default-text">
+                Search for...&nbsp;
                 <div class="cycle-container">
                     {% for tag in getTags.result %}
                         <span class="cycle-item">{{ tag }}</span>
@@ -78,7 +78,7 @@ eleventyComputed:
                         <span class="cycle-item">{{ author.name }}</span>
                     {% endfor %}
                     {% for issue in getIssues.result %}
-                        <span class="cycle-item">Issue #{{ issue.number }}</span>
+                        <span class="cycle-item">issue #{{ issue.number }}</span>
                     {% endfor %}
                 </div>
             </h4>

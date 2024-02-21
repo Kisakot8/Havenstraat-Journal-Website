@@ -13,7 +13,8 @@ async function getIssues () {
         title,
         author->{
         name,
-        nickname
+        nickname,
+        "slug": slug.current
         },
         "imageUrl": thumbnail.asset->url,
         "pdfUrl": articlePDF.asset->url,

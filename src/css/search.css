@@ -182,7 +182,7 @@
     width: 100%;
 }
 
-.default-text {
+#default-text {
     position: absolute;
     left: 40%;
     top: 30%;
