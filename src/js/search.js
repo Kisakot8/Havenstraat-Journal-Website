@@ -158,7 +158,49 @@ function search (issues) {
         }
     }
 
-    console.log(finalArticles)
+
+    // Clear any article cards alraedy rendered by deleting and re-creating the container
+    document.getElementById('results-articles-container').remove();
+    let articlesContainer = document.createElement('div');
+    articlesContainer.id = 'results-articles-container';
+
+    // Create article elements and add them to the container
+    for (let index = 0; index < finalArticles.length; index++) {
+        const article = finalArticles[index];
+        
+        let articleDiv = document.createElement('div');
+
+        articleDiv.classList.add('article-card');
+        articleDiv.onclick = `window.open('/articles/${article.slug}/');`;
+        articleDiv.dataset.tags = `${article.tags.join(' ')}`;
+        articleDiv.dataset.author = `${article.author.name}`;
+
+        let thumbnailContainer = document.createElement('div');
+        thumbnailContainer.classList.add('article-thumbnail-container');
+
+        let thumbnailImg = document.createElement('img');
+        thumbnailImg.classList.add('article-thumbnail');
+        thumbnailImg.src = article.imageUrl;
+        thumbnailImg.alt = 'Article thumbnail';
+
+        thumbnailContainer.appendChild(thumbnailImg);
+
+        let articleTitle = document.createElement('h2');
+        articleTitle.classList.add('article-title');
+        articleTitle.textContent = article.title;
+
+        let articleAuthor = document.createElement('h4');
+        articleAuthor.classList.add('article-author');
+        articleAuthor.textContent = `By ${article.author.name}`;
+
+        articleDiv.appendChild(thumbnailContainer);
+        articleDiv.appendChild(articleTitle);
+        articleDiv.appendChild(articleAuthor);
+
+        articlesContainer.appendChild(articleDiv);
+    }
+
+    document.getElementById('results-container').appendChild(articlesContainer);
 }
 
 //#endregion
