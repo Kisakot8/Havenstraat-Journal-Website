@@ -81,6 +81,15 @@ const cycle = setInterval(() => {
 
 // #region search
 
+let input = document.getElementById('search-box-input');
+
+input.addEventListener('keypress', function(event) {
+    if (event.key === 'Enter') {
+        event.preventDefault();
+        document.getElementById('search-bar-button').click();
+    }
+});
+
 function search (issues) {
     // Get issues using Eleventy's data cascade instead of import from getIssues module so
     // additional API calls aren't made, as data cascade fetches from cache.
@@ -91,6 +100,9 @@ function search (issues) {
         document.getElementById('default-text').style.display = 'none';
         clearInterval(cycle);
     }
+
+    // Get user input from search box
+    const userInput = input.value.toLowerCase();
 
     // Create arrays of filters applied of issues, authors and tags selected
     let issueCheckboxes = document.getElementsByClassName('issue-checkbox');
@@ -139,7 +151,8 @@ function search (issues) {
     }
 
 
-    // Goes through every article in selectedArticles and adds any matching filters to final array
+    // Goes through every article in selectedArticles and adds any matching filters to final array,
+    // as well as checking against searchbox input in the author, tag and title fields.
     finalArticles = [];
 
     for (let index = 0; index < selectedArticles.length; index++) {
@@ -152,7 +165,12 @@ function search (issues) {
         // added to finalArticles
         if (
             tagIntersection.length !== 0 &&
-            authorFilters.includes(article.author.slug)
+            authorFilters.includes(article.author.slug) &&
+                (userInput === '' ||
+                article.title.toLowerCase().includes(userInput) ||
+                article.author.name.toLowerCase().includes(userInput) ||
+                article.author.slug.toLowerCase().includes(userInput) ||
+                article.tags.join(' ').includes(userInput))
         ) {
             finalArticles.push(article);
         }
