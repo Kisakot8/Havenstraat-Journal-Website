@@ -78,6 +78,10 @@
     background-color: #eee;
     padding: 0 16px 16px 16px;
     border-radius: 24px;
+    width: fit-content;
+    height: fit-content;
+    block-size: fit-content;
+    max-width: 280px;
 }
 
 .checkbox-container {
@@ -160,7 +164,7 @@
 }
 
 .selector-all {
-    height: 100%;
+    display: inline;
     margin-top: 10px;
 }
 

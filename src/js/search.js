@@ -160,9 +160,9 @@ function search (issues) {
 
 
     // Clear any article cards alraedy rendered by deleting and re-creating the container
-    document.getElementById('results-articles-container').remove();
+    document.getElementsByClassName('articles-container')[0].remove();
     let articlesContainer = document.createElement('div');
-    articlesContainer.id = 'results-articles-container';
+    articlesContainer.classList.add('articles-container');
 
     // Create article elements and add them to the container
     for (let index = 0; index < finalArticles.length; index++) {
