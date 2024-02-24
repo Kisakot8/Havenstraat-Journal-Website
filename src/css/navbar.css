@@ -26,6 +26,8 @@
     align-items: center;
     text-align: center;
     text-decoration: none;
+    justify-content: center;
+    width: 100%;
 }
 
 #navbar-menu a {
@@ -34,10 +36,10 @@
     align-items: center;
     justify-content: center;
     text-decoration: none;
-    padding: 24px;
     position: relative;
     transition: all .3s ease;
     cursor: pointer;
+    padding: 12px 12px 12px 12px;
 }
 
 .navbar-links {
@@ -72,6 +74,7 @@
 .navbar-links::before {
     content: '';
     position: absolute;
+    left: 0;
     bottom: -2px;
     width: 100%;
     height: 5px;
