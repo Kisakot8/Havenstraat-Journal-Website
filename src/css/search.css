@@ -227,4 +227,35 @@
     cursor: default !important;
 }
 
+#not-found {
+    display: none;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    position: absolute;
+    left: 40%;
+    width: 30%;
+    color: #444;
+}
+
+#not-found h4 {
+    font-size: 2rem;
+    text-align: center;
+}
+
+#not-found h4 i {
+    font-size: 3rem;
+    font-weight: 900;
+}
+
+#not-found p {
+    text-align: center;
+    font-weight: 400;
+    margin-bottom: 12px;
+}
+
+#not-found img {
+    height: 300px;
+}
+
 /* #endregion */

@@ -177,6 +177,16 @@ function search (issues) {
         }
     }
 
+    // Toggle not found text if no articles are found
+    notFound = document.getElementById('not-found');
+
+    if (finalArticles.length === 0) {
+        notFound.style.display = 'flex';
+        return
+    } else if (notFound.style.display === 'flex') {
+        notFound.style.display = 'none'
+    }
+
 
     // Clear any article cards alraedy rendered by deleting and re-creating the container
     document.getElementsByClassName('articles-container')[0].remove();
