@@ -190,7 +190,7 @@ function search (issues) {
         let articleDiv = document.createElement('div');
 
         articleDiv.classList.add('article-card', 'small-card');
-        articleDiv.onclick = `window.open('/articles/${article.slug}/');`;
+        articleDiv.onclick = function(event) {window.open(`/articles/${article.slug}/`);}
         articleDiv.dataset.tags = `${article.tags.join(' ')}`;
         articleDiv.dataset.author = `${article.author.name}`;
 

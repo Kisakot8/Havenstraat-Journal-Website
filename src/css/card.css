@@ -25,14 +25,6 @@
     font-size: 1.2rem;
 }
 
-.small-card {
-    height: 300px !important;
-    border-radius: 1.5rem !important;
-    border-width: 3px !important;
-    margin: 18px !important;
-    font-size: .9rem !important;
-}
-
 .article-card:hover {
     box-shadow: 8px 8px 0 0 var(--red);
 }
@@ -40,7 +32,7 @@
 .article-thumbnail-container {
     z-index: inherit;
     position: relative;
-    height: 200px;
+    height: 250px;
     object-fit: cover;
     border-bottom: 4px solid var(--blue);
     transition: inherit;
@@ -76,6 +68,26 @@
     position: relative;
     left: 10px;
     bottom: 20px;
+}
+
+.small-card {
+    height: 300px !important;
+    border-radius: 1.5rem !important;
+    border-width: 3px !important;
+    margin: 18px !important;
+    font-size: .9rem !important;
+}
+
+.articles-container:has(> .small-card) {
+    margin-top: 0;
+}
+
+.small-card > .article-author {
+    bottom: 10px;
+}
+
+.small-card > .article-title {
+    margin: 16px 9px;
 }
 
 /* #endregion */
