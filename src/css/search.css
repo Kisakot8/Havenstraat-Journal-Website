@@ -78,10 +78,9 @@
     background-color: #eee;
     padding: 0 16px 16px 16px;
     border-radius: 24px;
-    width: fit-content;
     height: fit-content;
     block-size: fit-content;
-    max-width: 280px;
+    width: 280px;
 }
 
 .checkbox-container {
@@ -212,6 +211,7 @@
     font-weight: 700;
     width: 100%;
     cursor: default;
+    text-transform: capitalize;
 }
 
 .cycle-item-appearing {

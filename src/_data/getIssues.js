@@ -8,7 +8,7 @@ async function getIssues () {
     const QUERY = encodeURIComponent(`
 *[_type == "issue"] {
     "number": number,
-    "articles": *[_type == "article"] {
+    articles[]->{
         "slug": slug.current,
         title,
         author->{

@@ -48,7 +48,7 @@ const shuffle = (array) => {
     return array.sort(() => Math.random() - 0.5); 
 }; 
 
-const CYCLE_INTERVAL = 3000; // in ms
+const CYCLE_INTERVAL = 2000; // in ms
 
 let cycleItems = shuffle(Array.from(document.getElementsByClassName('cycle-item')));
 cycleIndex = 0;
@@ -144,6 +144,7 @@ function search (issues) {
 
     for (let index = 0; index < issues.length; index++) {
         const issue = issues[index];
+        console.log(index, issue)
 
         if ( issueFilters.includes(issue.number) ) {
             selectedArticles.push(...issue.articles);
@@ -188,7 +189,7 @@ function search (issues) {
         
         let articleDiv = document.createElement('div');
 
-        articleDiv.classList.add('article-card');
+        articleDiv.classList.add('article-card', 'small-card');
         articleDiv.onclick = `window.open('/articles/${article.slug}/');`;
         articleDiv.dataset.tags = `${article.tags.join(' ')}`;
         articleDiv.dataset.author = `${article.author.name}`;
