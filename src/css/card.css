@@ -5,13 +5,16 @@
     justify-content: center;
     flex-wrap: wrap;
     margin-top: 30px;
-    width: 100%;
+    width: 90%;
+    margin-left: 5%;
+    height: fit-content;
 }
 
 .article-card {
     z-index: 1;
     margin: 24px;
-    height: 400px;
+    flex: 1 0 26%;
+    max-width: 27%;
     aspect-ratio: 3 / 4;
     border-radius: 2rem;
     background-color: var(--blue-background);
@@ -58,9 +61,10 @@
     z-index: inherit;
     position: relative;
     flex: 3 1 auto;
-    margin: 16px 12px;
+    margin: 16px 10px;
     font-weight: 400;
     font-size: inherit;
+    width: fit-content;
 }
 
 .article-author {
@@ -68,6 +72,7 @@
     position: relative;
     left: 10px;
     bottom: 20px;
+    width: fit-content;
 }
 
 .small-card {
@@ -80,6 +85,8 @@
 
 .articles-container:has(> .small-card) {
     margin-top: 0;
+    width: 100%;
+    margin-left: 0;
 }
 
 .small-card > .article-author {
@@ -88,6 +95,65 @@
 
 .small-card > .article-title {
     margin: 16px 9px;
+}
+
+/* #endregion */
+
+
+/* #region responsiveness */
+
+@media only screen and (max-width: 992px) {
+    .article-card {
+        font-size: 1rem;
+        border-radius: 1.5rem;
+    }
+
+    .article-author {
+        bottom: 12px;
+        left: 10px;
+    }
+
+    .article-title {
+        margin: 8px 10px 12px;
+    }
+}
+
+
+@media only screen and (max-width: 768px) {
+    .article-card {
+        font-size: .8rem;
+        border-radius: 1rem;
+        margin: 16px;
+    }
+
+    .article-author {
+        bottom: 8px;
+        left: 7px;
+    }
+
+    .article-title {
+        margin: 6px 7px 8px;
+    }
+
+    .small-card {
+        height: 200px !important;
+        border-radius: 1rem !important;
+        border-width: 2px !important;
+        margin: 12px !important;
+        font-size: .75rem !important;
+    }
+
+    .small-card:hover {
+        box-shadow: 6px 6px 0 0 var(--red);
+    }
+    
+    .small-card > .article-author {
+        bottom: 8px;
+    }
+    
+    .small-card > .article-title {
+        margin: 6px 6px 8px;
+    }
 }
 
 /* #endregion */

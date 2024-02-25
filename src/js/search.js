@@ -144,7 +144,6 @@ function search (issues) {
 
     for (let index = 0; index < issues.length; index++) {
         const issue = issues[index];
-        console.log(index, issue)
 
         if ( issueFilters.includes(issue.number) ) {
             selectedArticles.push(...issue.articles);
@@ -177,21 +176,22 @@ function search (issues) {
         }
     }
 
+    // Clear any article cards alraedy rendered by deleting and re-creating the container
+    document.getElementsByClassName('articles-container')[0].remove();
+    let articlesContainer = document.createElement('div');
+    articlesContainer.classList.add('articles-container');
+    document.getElementById('results-container').appendChild(articlesContainer);
+
     // Toggle not found text if no articles are found
     notFound = document.getElementById('not-found');
 
     if (finalArticles.length === 0) {
         notFound.style.display = 'flex';
+        
         return
     } else if (notFound.style.display === 'flex') {
         notFound.style.display = 'none'
     }
-
-
-    // Clear any article cards alraedy rendered by deleting and re-creating the container
-    document.getElementsByClassName('articles-container')[0].remove();
-    let articlesContainer = document.createElement('div');
-    articlesContainer.classList.add('articles-container');
 
     // Create article elements and add them to the container
     for (let index = 0; index < finalArticles.length; index++) {
@@ -229,7 +229,6 @@ function search (issues) {
         articlesContainer.appendChild(articleDiv);
     }
 
-    document.getElementById('results-container').appendChild(articlesContainer);
 }
 
 //#endregion

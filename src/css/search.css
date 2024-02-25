@@ -235,6 +235,7 @@
     position: absolute;
     left: 40%;
     width: 30%;
+    min-width: 280px;
     color: #444;
 }
 
@@ -256,6 +257,41 @@
 
 #not-found img {
     height: 300px;
+    aspect-ratio: 9/10;
+}
+
+/* #endregion */
+
+
+/* #region responsiveness */
+
+@media only screen and (max-width: 768px) {
+    #default-text {
+        font-size: 1.5rem;
+    }
+
+    #filters-container {
+        width: 150px;
+    }
+
+    .input-label {
+        font-size: .8rem;
+        margin-top: 1px;
+    }
+
+    .input-title {
+        font-size: .9rem;
+    }
+
+    .selector-all {
+        margin-top: 0;
+        line-height: 1;
+    }
+
+    #search-box {
+        width: 90%;
+        margin-left: 5%;
+    }
 }
 
 /* #endregion */
