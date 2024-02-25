@@ -8,6 +8,7 @@ async function getIssues () {
     const QUERY = encodeURIComponent(`
 *[_type == "issue"] {
     "number": number,
+    "color": issueColor.hex,
     articles[]->{
         "slug": slug.current,
         title,

@@ -15,6 +15,11 @@ export default defineType({
             type: 'array',
             title: 'Articles',
             of: [{type: 'reference', to: {type: 'article'}}]
+        }),
+        defineField({
+            name: 'issueColor',
+            type: 'color',
+            title: 'Issue theme color'
         })
     ]
 })
