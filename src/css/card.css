@@ -156,4 +156,25 @@
     }
 }
 
+
+@media only screen and (max-width: 620px) {
+    .articles-container {
+        margin-left: 1%;
+        width: 98%;
+        justify-content: space-evenly;
+    }
+
+    .article-card {
+        flex: 1 0 42%;
+        max-width: unset;
+        font-size: 16px;
+        max-width: 45%;
+        margin: 6px;
+    }
+
+    .small-card {
+        font-size: 1rem !important;
+    }
+}
+
 /* #endregion */

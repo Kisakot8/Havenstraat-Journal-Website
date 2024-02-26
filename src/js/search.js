@@ -40,6 +40,7 @@ $('#tag-selector-all').click(function(event) {
 
 // #endregion
 
+
 // #region text-cycle
 
 let cycleActive = true;
@@ -78,6 +79,7 @@ const cycle = setInterval(() => {
 }, CYCLE_INTERVAL);
 
 // #endregion
+
 
 // #region search
 
@@ -232,3 +234,16 @@ function search (issues) {
 }
 
 //#endregion
+
+
+// #region filter-button
+
+const filterButton = document.getElementById('filter-button');
+const filterContainer = document.getElementById('filters-container');
+
+function filterToggle() {
+    filterButton.classList.toggle('active');
+    filterContainer.classList.toggle('active');
+}
+
+// #endregion

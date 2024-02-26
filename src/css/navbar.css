@@ -204,6 +204,10 @@ header {
 }
 
 @media only screen and (max-width: 768px) {
+    #about-link {
+        display: flex !important;
+    }
+
     .title-container {
         border-bottom: 2px solid var(--blue);
     }
@@ -250,7 +254,8 @@ header {
     }
 
     #navbar-menu a {
-        height: unset;
+        flex: unset;
+        font-size: 2rem;
         padding: 8px 12px;
     }
 
@@ -260,6 +265,7 @@ header {
 
     .current-section {
         transform: translateX(24px);
+        font-size: 2rem !important;
     }
 
     #search-link {
@@ -274,7 +280,34 @@ header {
     #navbar.active {
         left: 0;
     }
+}
 
+
+@media only screen and (max-width: 620px) {
+    #title {
+        font-size: 150%;
+    }
+
+    .mobile-icon {
+        font-size: 175%;
+        top: 18px;
+    }
+
+    #navbar-menu {
+        justify-content: unset;
+        top: 4rem;
+        left: 1.5rem;
+    }
+
+    #navbar-menu a {
+        flex: unset;
+        height: 80px;
+        font-size: 2rem;
+    }
+
+    .current-section {
+        font-size: 2rem !important;
+    }
 }
 
 /* #endregion */

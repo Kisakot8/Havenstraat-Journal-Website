@@ -10,62 +10,76 @@ eleventyComputed:
 ---
 
 <div id="search-container">
-    <div id="search-box">
-        <input id="search-box-input" type="text" name="search" placeholder="Search {{ getCards.result.length }} articles... ">
-        <button id="search-bar-button" onclick="search('{{ getIssues.result | dump }}');">
-            <i class="fa-solid fa-magnifying-glass" id="search-bar-icon"></i>
+    <div id="upper-search-container">
+        <div id="search-box">
+            <input id="search-box-input" type="text" name="search" placeholder="Search {{ getCards.result.length }} articles... ">
+            <button id="search-bar-button" onclick="search('{{ getIssues.result | dump }}');">
+                <i class="fa-solid fa-magnifying-glass" id="search-bar-icon"></i>
+            </button>
+        </div>
+        <button id="filter-button" onclick="filterToggle();">
+            <i class="fa-solid fa-filter"></i>
+            <h4>Show filters</h4>
         </button>
     </div>
     <div id="lower-search-container">
         <div id="filters-container">
 
-            <div class="filter-header">
-                <h2 class="input-title">Issues</h2>
-                <label class="checkbox-container selector-all">
-                    <input type="checkbox" id="issue-selector-all">
-                    <span class="checkmark"></span>
-                    <span class="input-label"></span>
-                </label>
+            <div class="filter-section">
+                <div class="filter-header">
+                    <h2 class="input-title">Issues</h2>
+                    <label class="checkbox-container selector-all">
+                        <input type="checkbox" id="issue-selector-all">
+                        <span class="checkmark"></span>
+                        <span class="input-label"></span>
+                    </label>
+                </div>
+                {% for issue in getIssues.result %}
+                    <label class="checkbox-container">
+                        <input type="checkbox" checked="checked" class="issue-checkbox" data-issue="{{ issue.number }}">
+                        <span class="checkmark"></span>
+                        <span class="input-label">Issue #{{ issue.number }}</span>
+                    </label>
+                {% endfor %}
             </div>
-            {% for issue in getIssues.result %}
-                <label class="checkbox-container">
-                    <input type="checkbox" checked="checked" class="issue-checkbox" data-issue="{{ issue.number }}">
-                    <span class="checkmark"></span>
-                    <span class="input-label">Issue #{{ issue.number }}</span>
-                </label>
-            {% endfor %}
 
-            <div class="filter-header">
-                <h2 class="input-title">Authors</h2>
-                <label class="checkbox-container selector-all">
-                    <input type="checkbox" id="author-selector-all">
-                    <span class="checkmark"></span>
-                    <span class="input-label"></span>
-                </label>
+            <div class="filter-section">
+                <div class="filter-header">
+                    <h2 class="input-title">Authors</h2>
+                    <label class="checkbox-container selector-all">
+                        <input type="checkbox" id="author-selector-all">
+                        <span class="checkmark"></span>
+                        <span class="input-label"></span>
+                    </label>
+                </div>
+                {% for author in getAuthors.result %}
+                    <label class="checkbox-container">
+                        <input type="checkbox" checked="checked" class="author-checkbox" data-author="{{ author.slug | slugify }}">
+                        <span class="checkmark"></span>
+                        <span class="input-label">{{ author.name }}</span>
+                    </label>
+                {% endfor %}
             </div>
-            {% for author in getAuthors.result %}
-                <label class="checkbox-container">
-                    <input type="checkbox" checked="checked" class="author-checkbox" data-author="{{ author.slug | slugify }}">
-                    <span class="checkmark"></span>
-                    <span class="input-label">{{ author.name }}</span>
-                </label>
-            {% endfor %}
 
-            <div class="filter-header">
-                <h2 class="input-title">Categories</h2>
-                <label class="checkbox-container selector-all">
-                    <input type="checkbox" id="tag-selector-all">
-                    <span class="checkmark"></span>
-                    <span class="input-label"></span>
-                </label>
+            <div class="filter-section">
+                <div class="filter-header">
+                    <h2 class="input-title">Categories</h2>
+                    <label class="checkbox-container selector-all">
+                        <input type="checkbox" id="tag-selector-all">
+                        <span class="checkmark"></span>
+                        <span class="input-label"></span>
+                    </label>
+                </div>
+                {% for tag in getTags.result %}
+                    <label class="checkbox-container">
+                        <input type="checkbox" checked="checked" class="tag-checkbox" data-tag="{{ tag | slugify }}">
+                        <span class="checkmark"></span>
+                        <span class="input-label">{{ tag }}</span>
+                    </label>
+                {% endfor %}
             </div>
-            {% for tag in getTags.result %}
-                <label class="checkbox-container">
-                    <input type="checkbox" checked="checked" class="tag-checkbox" data-tag="{{ tag | slugify }}">
-                    <span class="checkmark"></span>
-                    <span class="input-label">{{ tag }}</span>
-                </label>
-            {% endfor %}
+
+
         </div>
         <div id="results-container">
             <h4 id="default-text">

@@ -8,6 +8,56 @@
     justify-items: center;
 }
 
+/* upper-search-container contains the search box and filter icon (when open) */
+
+#upper-search-container {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+/* #region filter button */
+
+#filter-button {
+    width: 155px;
+    flex-direction: row;
+    align-items: center;
+    font-size: 1rem;
+    margin-top: 16px;
+    border: 2px solid #00000000;
+    background-color: #eee;
+    border-radius: 8px;
+    cursor: pointer;
+    color: #444;
+    display: none;
+    transition: border-radius .5s;
+    transition: .2s all;
+}
+
+#filter-button:hover {
+    border: 2px solid var(--blue-trans);
+}
+
+#filter-button:active {
+    color: #eee;
+    background-color: var(--blue);
+    transition: .2s all;
+}
+
+#filter-button i {
+    margin: 0 4% 0 8%;
+    width: 8%;
+}
+
+#filter-button h4 {
+    width: 80%;
+}
+
+/* #endregion */
+
+
 /* #region search box */
 
 #search-box {
@@ -24,12 +74,12 @@
     transition: .2s all;
 }
 
-#search-box:hover {
+#search-box:hover, #search-box:focus-within {
     box-shadow: 0 5px rgba(0, 0, 0, .2);
     border-color: var(--red);
 }
 
-#search-box:hover #search-bar-icon {
+#search-box:hover #search-bar-icon, #search-box:focus-within #search-bar-icon {
     color: var(--red);
 }
 
@@ -271,7 +321,7 @@
     }
 
     #filters-container {
-        width: 150px;
+        width: 180px;
     }
 
     .input-label {
@@ -290,7 +340,75 @@
 
     #search-box {
         width: 90%;
-        margin-left: 5%;
+    }
+}
+
+
+@media only screen and (max-width: 620px) {
+    #filter-button {
+        display: flex;
+    }
+
+    #filter-button.active {
+        border-radius: 8px 8px 0 0;
+    }
+
+    #lower-search-container {
+        margin-top: 0;
+        flex-direction: column;
+        align-items: center;
+    }
+
+    #filters-container {
+        flex-direction: row;
+        width: 90%;
+        height: fit-content;
+        max-height: 0;
+        overflow: hidden;
+        transition: .5s all;
+        padding: 0 4px;
+        top: -1px;
+        position: relative;
+    }
+
+    #filters-container.active {
+        max-height: 600px;
+        transition: .5s all;
+        padding-bottom: 16px;
+    }
+
+    .filter-section {
+        flex: 1 0 26%;
+        margin: 0 4px;
+    }
+
+    #results-container {
+        position: relative;
+        margin: 32px 0;
+        align-items: center;
+        justify-content: center;
+        width: 100vw;
+        flex-direction: column;
+        min-height: 300px;
+    }
+
+    #default-text {
+        left: calc(55.3% - 169px);
+        width: 85%;
+    }
+
+    .cycle-container {
+        width: 57%;
+    }
+
+    .cycle-item {
+        height: fit-content;
+        width: inherit;
+    }
+
+    #not-found {
+        position: relative;
+        left: 4px;
     }
 }
 
