@@ -4,15 +4,18 @@
             <i class="fa-solid fa-bars"></i>
         </button>
         <a id="title" href="/" name="Title"> {{ title }} </a>
+        <a href="/search" id="mobile-search" class="mobile-icon">
+            <i class="fa-solid fa-magnifying-glass"></i>
+        </a>
     </div>
     <nav id="navbar">
         <div class="navbar-container">
             <nav id="navbar-menu">
+                <a class="navbar-links" id="search-link"  href="/search" title="search"> &nbsp; <i class="fa-solid fa-magnifying-glass"></i> &nbsp; </a>
                 <a class="navbar-links" id="article-card-link" href="/"> Articles </a>
                 {% for name in getTags.result | sort(false, false) %}
                     {% tag name %}
                 {% endfor %}
-                <a class="navbar-links" id="search-link"  href="/search" title="search"> <i class="fa-solid fa-magnifying-glass"></i> </a>
                 <a class="navbar-links" id="issues-link" href="/issues"> Issues </a>
                 <a class="navbar-links" id="about-link" href="/about" style="display: none;"> About Us </a>
             </nav>

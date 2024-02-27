@@ -48,7 +48,7 @@ header {
     justify-content: space-evenly;
     z-index: 1;
     width: 100%;
-    padding: 0 8%;
+    padding: 0 6%;
     background-color: #eee;
     top: 0;
     position: relative;
@@ -186,6 +186,16 @@ header {
     }
 }
 
+@media only screen and (max-width: 890px) {
+    #issues-link {
+        display: none !important;
+    }
+
+    .navbar-container {
+        padding: 0 4px;
+    }
+}
+
 
 .mobile-icon {
     position: absolute;
@@ -197,6 +207,7 @@ header {
 
 .mobile-icon:hover {
     color: var(--red);
+    cursor: pointer;
 }
 
 .noscroll {
@@ -205,6 +216,10 @@ header {
 
 @media only screen and (max-width: 768px) {
     #about-link {
+        display: flex !important;
+    }
+
+    #issues-link {
         display: flex !important;
     }
 
@@ -217,6 +232,13 @@ header {
         align-self: center;
         top: 30px;
         left: 1rem;
+    }
+
+    #mobile-search {
+        right: 16px;
+        left: unset;
+        top: calc(inherit - 1px);
+        text-decoration: none;
     }
 
     #mobile-close {
@@ -239,24 +261,26 @@ header {
     }
 
     .navbar-container {
-        height: 100%;
+        position: absolute;
+        top: 0;
     }
 
     #navbar-menu {
         display: flex;
         flex-direction: column;
-        height: 100%;
         align-items: start;
         left: 4rem;
         top: 24px;
         position: absolute;
         flex-flow: column;
+        padding-bottom: 2rem;
     }
 
     #navbar-menu a {
         flex: unset;
-        font-size: 2rem;
+        font-size: 1.5rem;
         padding: 8px 12px;
+        height: 48px;
     }
 
     #navbar-menu a:not(.current-section):hover {
@@ -265,11 +289,10 @@ header {
 
     .current-section {
         transform: translateX(24px);
-        font-size: 2rem !important;
+        font-size: 1.6rem !important;
     }
 
     #search-link {
-        order: -1;
         padding: 8px 24px !important;
     }
 
@@ -285,12 +308,18 @@ header {
 
 @media only screen and (max-width: 620px) {
     #title {
-        font-size: 150%;
+        font-size: 24px;
     }
 
     .mobile-icon {
         font-size: 175%;
         top: 18px;
+        left: 24px;
+    }
+
+    #mobile-search {
+        right: 24px;
+        top: 17px;
     }
 
     #navbar-menu {
