@@ -339,4 +339,25 @@ header {
     }
 }
 
+@media only screen and (max-width: 428px) {
+    #title {
+        font-size: 1.4rem;
+    }
+
+    .mobile-icon {
+        top: 20px;
+        left: 8px;
+        font-size: 1.5rem;
+    }
+
+    #mobile-search {
+        right: 8px;
+        top: 19px;
+    }
+
+    #mobile-close {
+        font-size: 3rem;
+    }
+}
+
 /* #endregion */
