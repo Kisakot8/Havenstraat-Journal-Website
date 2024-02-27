@@ -1,0 +1,16 @@
+---
+layout: layouts/home.html
+currentSection: issues
+eleventyComputed:
+    title: "{{ getSecrets.name }}"
+    description: "{{ getSecrets.name }} Homepage"
+    designer: "{{ getSecrets.designer }}"
+    insta_link: "{{ getSecrets.insta_link }}"
+    designer_link: "{{ getSecrets.designer_link }}"
+---
+
+<div class="cards-container">
+    {% for issue in getIssues.result %}
+        {% issueCard issue.number, issue.color, issue.imageUrl, issue.date %}
+    {% endfor %}
+</div>

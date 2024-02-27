@@ -15,7 +15,7 @@ eleventyComputed:
     designer_link: "{{ getSecrets.designer_link }}"
 ---
 
-<div class="articles-container">
+<div class="cards-container">
     {% for article in getCards.result %}
         {% if article.tags.includes( pagination.items | slugify ) %}
             {% card article.title, article.imageUrl, article.tags, article.author, article.slug %}

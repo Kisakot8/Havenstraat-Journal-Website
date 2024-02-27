@@ -20,6 +20,34 @@ export default defineType({
             name: 'issueColor',
             type: 'color',
             title: 'Issue theme color'
-        })
-    ]
+        }),
+        defineField({
+            name: 'publishDate',
+            title: 'Publication Date',
+            type: 'date',
+        }),
+        defineField({
+            name: 'thumbnail',
+            title: 'Thumbnail Image',
+            type: 'image',
+        }),
+        defineField({
+            name: 'issuePDF',
+            title: 'PDF',
+            type: 'file',
+        }),
+          
+    ],
+
+    preview: {
+        select: {
+          num: 'number',
+        },
+        prepare(selection) {
+            const {num} = selection
+            return {
+                title: `Issue #${num}`
+            }
+        }
+      },
 })

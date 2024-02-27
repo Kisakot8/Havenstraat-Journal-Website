@@ -9,6 +9,9 @@ async function getIssues () {
 *[_type == "issue"] {
     "number": number,
     "color": issueColor.hex,
+    "imageUrl": thumbnail.asset->url,
+    "pdfUrl": issuePDF.asset->url,
+    "date": publishDate,
     articles[]->{
         "slug": slug.current,
         title,

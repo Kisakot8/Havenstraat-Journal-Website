@@ -2,16 +2,16 @@ const {html} = require('common-tags');
 
 function card(title, imgUrl, tags, author, slug) {
     return html`
-    <div class="article-card"
+    <div class="card article"
     onclick="window.open('/articles/${slug}/');"
     data-tags="${tags.join(' ')}"
     data-author="${author.name}"
     >
-        <div class="article-thumbnail-container">
-            <img class="article-thumbnail" src=${imgUrl} alt="Article thumbnail"></img>
+        <div class="card-thumbnail-container">
+            <img class="card-thumbnail" src=${imgUrl} alt="Article thumbnail"></img>
         </div>
-        <h2 class="article-title">${title}</h2>
-        <h4 class="article-author">By ${author.name}</h4>
+        <h2 class="card-title">${title}</h2>
+        <h4 class="card-subheading">By ${author.name}</h4>
     </div>
     `
 }

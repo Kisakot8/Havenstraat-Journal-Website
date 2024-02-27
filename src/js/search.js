@@ -179,9 +179,9 @@ function search (issues) {
     }
 
     // Clear any article cards alraedy rendered by deleting and re-creating the container
-    document.getElementsByClassName('articles-container')[0].remove();
+    document.getElementsByClassName('cards-container')[0].remove();
     let articlesContainer = document.createElement('div');
-    articlesContainer.classList.add('articles-container');
+    articlesContainer.classList.add('cards-container');
     document.getElementById('results-container').appendChild(articlesContainer);
 
     // Toggle not found text if no articles are found
@@ -201,27 +201,27 @@ function search (issues) {
         
         let articleDiv = document.createElement('div');
 
-        articleDiv.classList.add('article-card', 'small-card');
+        articleDiv.classList.add('card', 'small-card');
         articleDiv.onclick = function(event) {window.open(`/articles/${article.slug}/`);}
         articleDiv.dataset.tags = `${article.tags.join(' ')}`;
         articleDiv.dataset.author = `${article.author.name}`;
 
         let thumbnailContainer = document.createElement('div');
-        thumbnailContainer.classList.add('article-thumbnail-container');
+        thumbnailContainer.classList.add('card-thumbnail-container');
 
         let thumbnailImg = document.createElement('img');
-        thumbnailImg.classList.add('article-thumbnail');
+        thumbnailImg.classList.add('card-thumbnail');
         thumbnailImg.src = article.imageUrl;
         thumbnailImg.alt = 'Article thumbnail';
 
         thumbnailContainer.appendChild(thumbnailImg);
 
         let articleTitle = document.createElement('h2');
-        articleTitle.classList.add('article-title');
+        articleTitle.classList.add('card-title');
         articleTitle.textContent = article.title;
 
         let articleAuthor = document.createElement('h4');
-        articleAuthor.classList.add('article-author');
+        articleAuthor.classList.add('card-subheading');
         articleAuthor.textContent = `By ${article.author.name}`;
 
         articleDiv.appendChild(thumbnailContainer);

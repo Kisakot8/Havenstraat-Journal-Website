@@ -1,6 +1,6 @@
-/* #region article cards */
+/* #region cards */
 
-.articles-container {
+.cards-container {
     display: flex;
     justify-content: center;
     flex-wrap: wrap;
@@ -10,7 +10,7 @@
     height: fit-content;
 }
 
-.article-card {
+.card {
     z-index: 1;
     margin: 24px;
     flex: 1 0 26%;
@@ -28,11 +28,11 @@
     font-size: 1.2rem;
 }
 
-.article-card:hover {
+.card:hover {
     box-shadow: 8px 8px 0 0 var(--red);
 }
 
-.article-thumbnail-container {
+.card-thumbnail-container {
     z-index: inherit;
     position: relative;
     height: 250px;
@@ -45,7 +45,11 @@
     overflow: hidden;
 }
 
-.article-thumbnail {
+.issue > .card-thumbnail-container {
+    height: 300px;
+}
+
+.card-thumbnail {
     height: 100%;
     width: 100%;
     flex-shrink: 0;
@@ -53,11 +57,11 @@
     transition: 1s all;
 }
 
-.article-card:hover .article-thumbnail {
+.card:hover .card-thumbnail {
     transform: scale(1.08);
 }
 
-.article-title {
+.card-title {
     z-index: inherit;
     position: relative;
     flex: 3 1 auto;
@@ -67,10 +71,11 @@
     width: fit-content;
 }
 
-.article-author {
+.card-subheading {
     z-index: inherit;
     position: relative;
     left: 10px;
+    margin-right: 10px;
     bottom: 20px;
     width: fit-content;
 }
@@ -83,17 +88,17 @@
     font-size: .9rem !important;
 }
 
-.articles-container:has(> .small-card) {
+.cards-container:has(> .small-card) {
     margin-top: 0;
     width: 100%;
     margin-left: 0;
 }
 
-.small-card > .article-author {
+.small-card > .card-subheading {
     bottom: 10px;
 }
 
-.small-card > .article-title {
+.small-card > .card-title {
     margin: 16px 9px;
 }
 
@@ -103,35 +108,35 @@
 /* #region responsiveness */
 
 @media only screen and (max-width: 992px) {
-    .article-card {
+    .card {
         font-size: 1rem;
         border-radius: 1.5rem;
     }
 
-    .article-author {
+    .card-subheading {
         bottom: 12px;
-        left: 10px;
     }
 
-    .article-title {
+    .card-title {
         margin: 8px 10px 12px;
     }
 }
 
 
 @media only screen and (max-width: 768px) {
-    .article-card {
+    .card {
         font-size: .8rem;
         border-radius: 1rem;
         margin: 16px;
     }
 
-    .article-author {
+    .card-subheading {
         bottom: 8px;
         left: 7px;
+        margin-right: 7px;
     }
 
-    .article-title {
+    .card-title {
         margin: 6px 7px 8px;
     }
 
@@ -147,24 +152,24 @@
         box-shadow: 6px 6px 0 0 var(--red);
     }
     
-    .small-card > .article-author {
+    .small-card > .card-subheading {
         bottom: 8px;
     }
     
-    .small-card > .article-title {
+    .small-card > .card-title {
         margin: 6px 6px 8px;
     }
 }
 
 
 @media only screen and (max-width: 620px) {
-    .articles-container {
+    .cards-container {
         margin-left: 1%;
         width: 98%;
         justify-content: space-evenly;
     }
 
-    .article-card {
+    .card {
         flex: 1 0 42%;
         max-width: unset;
         font-size: 16px;
@@ -175,6 +180,11 @@
     .small-card {
         font-size: 1rem !important;
     }
+}
+
+
+@media only screen and (max-width: 420px) {
+    
 }
 
 /* #endregion */
