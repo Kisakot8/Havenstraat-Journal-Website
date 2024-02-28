@@ -1,0 +1,22 @@
+---
+layout: layouts/home.html
+currentSection: ""
+eleventyComputed:
+    title: "{{ getSecrets.name }}"
+    description: "{{ getSecrets.name }} Homepage"
+    designer: "{{ getSecrets.designer }}"
+    insta_link: "{{ getSecrets.insta_link }}"
+    designer_link: "{{ getSecrets.designer_link }}"
+---
+
+<div id="masthead">
+    <div id="masthead-container">
+        <h1> Our Leadership </h1>
+        {% for leaderGroup in getLeaders.result %}
+            {% leaders leaderGroup.role, leaderGroup.members, leaderGroup.order %}
+        {% endfor %}
+    </div>
+</div>
+
+
+<link rel="stylesheet" href="/css/masthead.css">

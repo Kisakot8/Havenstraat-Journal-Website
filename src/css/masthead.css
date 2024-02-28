@@ -1,0 +1,36 @@
+#masthead {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+}
+
+#masthead-container {
+    display: flex;
+    flex-direction: column;
+    flex-wrap: wrap;
+    width: 70%;
+    margin: 24px 0;
+}
+
+#masthead-container h1 {
+    text-align: center;
+    font-size: 2.5rem;
+}
+
+.leader-section {
+    margin: 4px 0;
+}
+
+.leader-section h2 {
+    font-size: 1.75rem;
+}
+
+.leader-section p {
+    font-size: 1.5rem;
+}
+
+@media only screen and (max-width: 768px) {
+    #masthead-container {
+        width: 80%;
+    }
+}

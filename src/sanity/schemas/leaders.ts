@@ -17,6 +17,12 @@ export default defineType({
             title: 'Members',
             of: [{type: 'reference', to: {type: 'author'}}]
         }),
+        defineField({
+            name: 'order',
+            type: 'number',
+            title: 'Order',
+            validation: rule => rule.integer()
+        }),
     ],
 
     preview: {
