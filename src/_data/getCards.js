@@ -7,17 +7,16 @@ async function getCards () {
 
     const QUERY = encodeURIComponent(`
 *[_type == "article"] {
-"slug": slug.current,
-title,
-author->{
-  name,
-  nickname,
-  "slug": slug.current
-},
-"imageUrl": thumbnail.asset->url,
-"pdfUrl": articlePDF.asset->url,
-"tags": tags[]->name
-}
+    "slug": slug.current,
+    title,
+    author->{
+        name,
+        "slug": slug.current
+    },
+    "imageUrl": thumbnail.asset->url,
+    "pdfUrl": articlePDF.asset->url,
+    "tags": tags[]->name
+    }
 `
     );
 

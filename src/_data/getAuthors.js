@@ -8,9 +8,9 @@ async function getAuthors () {
     const QUERY = encodeURIComponent(`
 *[_type == "author"] {
     name,
-    nickname,
     "slug": slug.current,
-    "imageUrl": image.asset->url
+    bio,
+    "isAuthor": author
 }
 `
     );

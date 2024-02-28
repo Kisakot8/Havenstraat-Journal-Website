@@ -11,45 +11,35 @@ export default defineType({
       type: 'string',
     }),
     defineField({
-      name: 'nickname',
-      title: 'Nickname',
-      type: 'string',
-    }),
-    defineField({
       name: 'slug',
       title: 'Slug',
       type: 'slug',
       options: {
-        source: 'nickname',
+        source: 'name',
         maxLength: 96,
-      },
-    }),
-    defineField({
-      name: 'image',
-      title: 'Image',
-      type: 'image',
-      options: {
-        hotspot: true,
       },
     }),
     defineField({
       name: 'bio',
       title: 'Bio',
-      type: 'array',
-      of: [
-        {
-          title: 'Block',
-          type: 'block',
-          styles: [{title: 'Normal', value: 'normal'}],
-          lists: [],
-        },
-      ],
+      type: 'string'
+    }),
+    defineField({
+      name: 'author',
+      title: 'Is this person an author?',
+      type: 'boolean'
     }),
   ],
   preview: {
     select: {
-      title: 'name',
-      media: 'image',
+      name: 'name',
+      isAuthor: 'author'
     },
+    prepare(selection) {
+      const {name, isAuthor} = selection
+      return {
+        title: `${name}: ${isAuthor ? 'author' : 'not author'}`
+      }
+    }
   },
 })
