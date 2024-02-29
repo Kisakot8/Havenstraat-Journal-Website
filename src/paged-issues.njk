@@ -8,8 +8,6 @@ permalink: "issues/{{ pagination.items[0].number }}/index.html"
 layout: layouts/article.html
 eleventyComputed:
     description: "{{ getSecrets.name }} issue number '{{ pagination.items[0].number }}'"
-    designer: "{{ getSecrets.designer }}"
     title: "{{ pagination.items[0].title }} | {{ getSecrets.name }}"
     insta_link: "{{ getSecrets.insta_link }}"
-    designer_link: "{{ getSecrets.designer_link }}"
 ---

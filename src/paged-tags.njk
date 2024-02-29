@@ -9,10 +9,8 @@ layout: layouts/home.html
 eleventyComputed:
     currentSection: "{{ pagination.items | slugify }}"
     description: "{{ getSecrets.name }} {{ pagination.items | slugify }} page"
-    designer: "{{ getSecrets.designer }}"
     title: "{{ getSecrets.name }}"
     insta_link: "{{ getSecrets.insta_link }}"
-    designer_link: "{{ getSecrets.designer_link }}"
 ---
 
 <div class="cards-container">
