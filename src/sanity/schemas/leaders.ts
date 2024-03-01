@@ -23,6 +23,16 @@ export default defineType({
             title: 'Order',
             validation: rule => rule.integer()
         }),
+        defineField({
+            name: 'aboutDisplay',
+            title: 'Display on about page? (If true, include image)',
+            type: 'boolean'
+        }),
+        defineField({
+            name: 'photo',
+            title: 'About page photo',
+            type: 'image',
+        }),
     ],
 
     preview: {
