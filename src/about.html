@@ -1,0 +1,17 @@
+---
+layout: layouts/about.html
+currentSection: about
+eleventyComputed:
+    title: "{{ getSecrets.name }}"
+    description: "{{ getSecrets.name }} Homepage"
+    insta_link: "{{ getSecrets.insta_link }}"
+---
+
+<div id="about-container">
+    <div id="leaders-container">
+        <h1>Meet our leaders</h1>
+        {% for leaderSection in getLeaders.result | selectattr("aboutDisplay") %}
+            {% aboutHead leaderSection.role, leaderSection.members, leaderSection.imgUrl, leaderSection.order %}
+        {% endfor %}
+    </div>
+</div>

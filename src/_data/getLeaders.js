@@ -10,9 +10,13 @@ async function getLeaders () {
     role,
     members[]->{
         name,
-        "slug": slug.current
+        "slug": slug.current,
+        bio,
+        "isAuthor": author
     },
-    order
+    order,
+    aboutDisplay,
+    "imgUrl": photo.asset->url
 }
 `
     );

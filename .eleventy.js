@@ -3,6 +3,7 @@ const test = require('./src/_includes/components/test')
 const tag = require('./src/_includes/components/tag')
 const issueCard = require('./src/_includes/components/issueCard')
 const leaders = require('./src/_includes/components/leaders')
+const aboutHead = require('./src/_includes/components/aboutHead')
 
 module.exports = function(eleventyConfig) {
     eleventyConfig.addPassthroughCopy('src/assets/');
@@ -18,6 +19,7 @@ module.exports = function(eleventyConfig) {
     eleventyConfig.addShortcode('tag', tag);
     eleventyConfig.addShortcode('issueCard', issueCard);
     eleventyConfig.addShortcode('leaders', leaders);
+    eleventyConfig.addShortcode('aboutHead', aboutHead);
 
     return {
         dir: {
