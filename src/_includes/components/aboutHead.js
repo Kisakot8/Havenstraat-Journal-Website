@@ -10,17 +10,15 @@ function aboutHead(role, members, imgUrl, order) {
 
     return html`
     <div class="about-leaders" style="order: ${order};">
-        <div class="leaders-info">
-            <div class="leaders-visual">
-                <div class="leaders-img-container">
-                    <img src="${imgUrl}" alt="A photo of confident-looking people">
-                </div>
-                <h2>${role}</h2>
+        <div class="leaders-visual">
+            <div class="leaders-img-container">
+                <img src="${imgUrl}" alt="A photo of confident-looking people">
             </div>
-            <ol class="leaders-bios">
-                ${leaderBios}
-            </ol>
+            <h2>${role}</h2>
         </div>
+        <ol class="leaders-bios">
+            ${leaderBios}
+        </ol>
     </div>
     `
 }
