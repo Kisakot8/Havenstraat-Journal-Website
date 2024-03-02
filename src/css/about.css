@@ -56,37 +56,6 @@
 /* #endregion */
 
 
-.about-leaders {
-    display: flex;
-    flex-direction: column;
-    --primary: var(--blue);
-    --secondary: var(--blue-trans);
-}
-
-.leaders-visual h2 {
-    text-align: center;
-    margin-top: 12px;
-    font-style: italic;
-    color: #444;
-}
-
-.about-leaders:nth-of-type(odd) {
-    --primary: var(--red);
-    --secondary: var(--red-trans);
-}
-
-.about-leaders:nth-of-type(odd) {
-    flex-direction: row-reverse;
-}
-
-.about-leaders {
-    display: flex;
-    flex-direction: row;
-    margin: 8px 0;
-    align-items: center;
-}
-
-
 /* #region list */
 
 .about-leaders ol {
@@ -155,6 +124,38 @@
 /* #endregion */
 
 
+/* #region leaders */
+
+.about-leaders {
+    display: flex;
+    flex-direction: column;
+    --primary: var(--blue);
+    --secondary: var(--blue-trans);
+}
+
+.leaders-visual h2 {
+    text-align: center;
+    margin-top: 12px;
+    font-style: italic;
+    color: #444;
+}
+
+.about-leaders:nth-of-type(odd) {
+    --primary: var(--red);
+    --secondary: var(--red-trans);
+}
+
+.about-leaders:nth-of-type(odd) {
+    flex-direction: row-reverse;
+}
+
+.about-leaders {
+    display: flex;
+    flex-direction: row;
+    margin: 8px 0;
+    align-items: center;
+}
+
 .leaders-visual {
     width: 100%;
     position: relative;
@@ -210,3 +211,5 @@
 .leader-name {
     font-weight: 700;
 }
+
+/* #endregion */
