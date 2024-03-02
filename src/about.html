@@ -8,8 +8,10 @@ eleventyComputed:
 ---
 
 <div id="about-container">
+    <div id="title-container">
+        <h1>Meet our <span>team.</span></h1>
+    </div>
     <div id="leaders-container">
-        <h1>Meet our leaders</h1>
         {% for leaderSection in getLeaders.result | selectattr("aboutDisplay") %}
             {% aboutHead leaderSection.role, leaderSection.members, leaderSection.imgUrl, leaderSection.order %}
         {% endfor %}
