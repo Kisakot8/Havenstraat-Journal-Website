@@ -75,11 +75,11 @@
     --secondary: var(--red-trans);
 }
 
-.about-leaders:nth-of-type(odd) .leaders-info {
+.about-leaders:nth-of-type(odd) {
     flex-direction: row-reverse;
 }
 
-.leaders-info {
+.about-leaders {
     display: flex;
     flex-direction: row;
     margin: 8px 0;
@@ -89,7 +89,7 @@
 
 /* #region list */
 
-.leaders-info ol {
+.about-leaders ol {
     display: flex;
     flex-direction: column;
     justify-content: space-between;
@@ -101,7 +101,7 @@
     text-shadow: 0 1px 0 rgba(255,255,255,.5);
 }
 
-.leaders-info li {
+.about-leaders li {
     margin: 1rem;
     font-size: 1.2rem;
     position: relative;
@@ -113,11 +113,11 @@
     transition: .3s all ease-in-out;
 }
 
-.leaders-info li:hover {
+.about-leaders li:hover {
     background-color: #eee;
 }
 
-.leaders-info li::before {
+.about-leaders li::before {
     content: '';
     position: absolute;
     left: -1.3rem;
@@ -130,7 +130,7 @@
     border-radius: 2rem;
 }
 
-.leaders-info li::after {
+.about-leaders li::after {
     content: counter(li);
     counter-increment: li;
     position: absolute;
@@ -148,7 +148,7 @@
     transition: .3s all ease-out;
 }
 
-.leaders-info li:hover::after {
+.about-leaders li:hover::after {
     transform: rotate(360deg);
 }
 
