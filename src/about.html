@@ -16,4 +16,9 @@ eleventyComputed:
             {% aboutHead leaderSection.role, leaderSection.members, leaderSection.imgUrl, leaderSection.order %}
         {% endfor %}
     </div>
+    <div id="authors-container">
+        {% for author in getAuthors.result | selectattr("isAuthor") %}
+            {% aboutAuthor author.name, author.bio, getLeaders.result | selectattr("aboutDisplay") %}
+        {% endfor %}
+    </div>
 </div>
