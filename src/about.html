@@ -11,14 +11,19 @@ eleventyComputed:
     <div id="title-container">
         <h1>Meet our <span>team.</span></h1>
     </div>
+
     <div id="leaders-container">
         {% for leaderSection in getLeaders.result | selectattr("aboutDisplay") %}
             {% aboutHead leaderSection.role, leaderSection.members, leaderSection.imgUrl, leaderSection.order %}
         {% endfor %}
     </div>
+
     <div id="authors-container">
-        {% for author in getAuthors.result | selectattr("isAuthor") %}
-            {% aboutAuthor author.name, author.bio, getLeaders.result | selectattr("aboutDisplay") %}
-        {% endfor %}
+        <h2>Our <span class="fancy">Authors</span></h2>
+        <ol class="rectangle-list">
+            {% for author in getAuthors.result | selectattr("isAuthor") %}
+                {% aboutAuthor author.name, author.bio, getLeaders.result | selectattr("aboutDisplay") %}
+            {% endfor %}
+        </ol>
     </div>
 </div>

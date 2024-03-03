@@ -16,7 +16,7 @@ function aboutHead(role, members, imgUrl, order) {
             </div>
             <h2>${role}</h2>
         </div>
-        <ol class="leaders-bios">
+        <ol class="rounded-list">
             ${leaderBios}
         </ol>
     </div>

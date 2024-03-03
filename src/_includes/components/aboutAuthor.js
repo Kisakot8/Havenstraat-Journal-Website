@@ -10,10 +10,10 @@ function aboutAuthor(name, bio, displayed) {
     }
 
     return html`
-    <div class="about-author">
-        <span class="author-name"> ${name} </span>
+    <li class="about-author">
+        <span class="author-name"> ${name} - </span>
         <span class="author-bio"> ${bio} </span>
-    </div>
+    </li>
     `
 }
 
