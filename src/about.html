@@ -12,18 +12,37 @@ eleventyComputed:
         <h1>Meet our <span>team.</span></h1>
     </div>
 
+    <div class="spacer">
+        <img src="/assets/wave-white-dark.svg" alt="A white to black curve">
+    </div>
+
     <div id="leaders-container">
         {% for leaderSection in getLeaders.result | selectattr("aboutDisplay") %}
             {% aboutHead leaderSection.role, leaderSection.members, leaderSection.imgUrl, leaderSection.order %}
         {% endfor %}
     </div>
 
+    <div class="spacer">
+        <img src="/assets/layered-wave-dark-orange.svg" alt="A black to orange layered curve">
+    </div>
+
     <div id="authors-container">
-        <h2>Our <span class="fancy">Authors</span></h2>
+        <h2>Our
+            <span class="fancy">
+                <span class="fancy-text">Authors</span>
+            </span>
+        </h2>
         <ol class="rectangle-list">
             {% for author in getAuthors.result | selectattr("isAuthor") %}
                 {% aboutAuthor author.name, author.bio, getLeaders.result | selectattr("aboutDisplay") %}
             {% endfor %}
         </ol>
     </div>
+
+    <div class="spacer">
+        <img src="/assets/layered-wave-orange-white.svg" alt="An orange to white layered curve">
+    </div>
+
 </div>
+
+<script src="/js/about.js"></script>
