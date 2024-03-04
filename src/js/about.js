@@ -15,7 +15,6 @@ const LETTER_DELAY = 0.1;
 const WORD_DELAY = 2.5;
 
 async function typingText() {
-    console.log('running')
 
     for (let i=0; i<TYPING.length; i++) {
         
@@ -25,7 +24,6 @@ async function typingText() {
         for (let j=0; j<word.length; j++) {
         const letter = word[j];
         content += letter;
-        console.log(content);
         FIELD.textContent = content;
         await sleep(LETTER_DELAY);
         
@@ -35,7 +33,6 @@ async function typingText() {
         
         for (let j=0; j<word.length; j++) {
         content = content.slice(0, -1);
-        console.log(content);
         FIELD.textContent = content;
         await sleep(LETTER_DELAY);
         
