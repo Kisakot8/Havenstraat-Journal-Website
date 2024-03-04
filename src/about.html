@@ -28,9 +28,7 @@ eleventyComputed:
 
     <div id="authors-container">
         <h2>Our
-            <span class="fancy">
-                <span class="fancy-text">Authors</span>
-            </span>
+            <span id="typing"></span>
         </h2>
         <ol class="rectangle-list">
             {% for author in getAuthors.result | selectattr("isAuthor") %}

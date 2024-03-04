@@ -304,6 +304,19 @@
 
 /* #region authors */
 
+@keyframes caret {
+    50% {
+        border-right-color: rgba(255, 255, 255, 1);
+    }
+}
+
+#typing {
+    border-right: 2px solid rgba(255, 255, 255, 0);
+    animation: caret .75s 0s infinite ease-in-out;
+    -webkit-background-clip: padding-box;
+    background-clip: padding-box;
+}
+
 #authors-container {
     display: flex;
     flex-direction: column;
