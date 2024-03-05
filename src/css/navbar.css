@@ -15,7 +15,6 @@ header {
     justify-self: center;
     padding: 1rem 0 4px;
     background-color: #eee;
-    position: relative;
 }
 
 #title {
@@ -215,6 +214,10 @@ header {
 }
 
 @media only screen and (max-width: 768px) {
+    header {
+        position: sticky;
+    }
+
     #about-link {
         display: flex !important;
     }
