@@ -30,7 +30,7 @@ eleventyComputed:
             <span id="typing"></span>
         </h2>
         <ol class="rectangle-list">
-            {% for author in getAuthors.result | selectattr("isAuthor") %}
+            {% for author in getAuthors.result | selectattr("isAuthor") | sort(false, false, "name") %}
                 {% aboutAuthor author.name, author.bio, getLeaders.result | selectattr("aboutDisplay") %}
             {% endfor %}
         </ol>

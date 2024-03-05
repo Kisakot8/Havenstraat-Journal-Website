@@ -256,6 +256,7 @@
     transition: all .3s ease-out;
     width: fit-content;
     --primary: var(--red);
+    width: calc(100% - 3em);
 }
 
 .rectangle-list li:nth-of-type(odd) {
