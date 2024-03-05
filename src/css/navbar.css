@@ -15,6 +15,7 @@ header {
     justify-self: center;
     padding: 1rem 0 4px;
     background-color: #eee;
+    position: relative;
 }
 
 #title {
