@@ -16,6 +16,7 @@
     display: flex;
     flex-direction: row;
     background-color: #B22222;
+    align-items: center;
 }
 
 #mission-text-wrapper {
@@ -30,8 +31,11 @@
     -webkit-mask-image: url(data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIGlkPSJzdy1qcy1ibG9iLXN2ZyIgdmVyc2lvbj0iMS4xIiB2aWV3Qm94PSIxOC42MyA5LjE3IDY0LjU5IDcxLjE1Ij4KICAgICAgICAgICAgICAgICAgICA8ZGVmcz4gCiAgICAgICAgICAgICAgICAgICAgICAgIDxsaW5lYXJHcmFkaWVudCBpZD0ic3ctZ3JhZGllbnQiIHgxPSIwIiB4Mj0iMSIgeTE9IjEiIHkyPSIwIj4KICAgICAgICAgICAgICAgICAgICAgICAgICAgIDxzdG9wIGlkPSJzdG9wMSIgc3RvcC1jb2xvcj0icmdiYSgyNDgsIDExNywgNTUsIDEpIiBvZmZzZXQ9IjAlIi8+CiAgICAgICAgICAgICAgICAgICAgICAgICAgICA8c3RvcCBpZD0ic3RvcDIiIHN0b3AtY29sb3I9InJnYmEoMjUxLCAxNjgsIDMxLCAxKSIgb2Zmc2V0PSIxMDAlIi8+CiAgICAgICAgICAgICAgICAgICAgICAgIDwvbGluZWFyR3JhZGllbnQ+CiAgICAgICAgICAgICAgICAgICAgPC9kZWZzPgogICAgICAgICAgICAgICAgPHBhdGggZmlsbD0idXJsKCNzdy1ncmFkaWVudCkiIGQ9Ik0xOS44LC0yOC4zQzI2LjEsLTIyLjYsMzIuMiwtMTcuNSwzMy4xLC0xMS41QzM0LC01LjUsMjkuOSwxLjQsMjYuNSw3LjVDMjMsMTMuNywyMC4zLDE5LDE2LDIyLjFDMTEuOCwyNS4yLDUuOSwyNi4yLC0xLjIsMjcuOUMtOC4zLDI5LjUsLTE2LjUsMzEuOCwtMjEuOCwyOUMtMjcuMSwyNi4yLC0yOS40LDE4LjIsLTMwLjUsMTAuOEMtMzEuNywzLjQsLTMxLjcsLTMuNSwtMzAuMiwtMTAuM0MtMjguNywtMTcuMiwtMjUuNiwtMjQsLTIwLjMsLTMwLjFDLTE1LC0zNi4xLC03LjUsLTQxLjMsLTAuNCwtNDAuOEM2LjcsLTQwLjMsMTMuNCwtMzQsMTkuOCwtMjguM1oiIHdpZHRoPSIxMDAlIiBoZWlnaHQ9IjEwMCUiIHRyYW5zZm9ybT0idHJhbnNsYXRlKDUwIDUwKSIgc3Ryb2tlLXdpZHRoPSIwIiBzdHlsZT0idHJhbnNpdGlvbjogYWxsIDAuM3MgZWFzZSAwczsiIHN0cm9rZT0idXJsKCNzdy1ncmFkaWVudCkiLz4KICAgICAgICAgICAgICA8L3N2Zz4=);
     mask-image: url(data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIGlkPSJzdy1qcy1ibG9iLXN2ZyIgdmVyc2lvbj0iMS4xIiB2aWV3Qm94PSIxOC42MyA5LjE3IDY0LjU5IDcxLjE1Ij4KICAgICAgICAgICAgICAgICAgICA8ZGVmcz4gCiAgICAgICAgICAgICAgICAgICAgICAgIDxsaW5lYXJHcmFkaWVudCBpZD0ic3ctZ3JhZGllbnQiIHgxPSIwIiB4Mj0iMSIgeTE9IjEiIHkyPSIwIj4KICAgICAgICAgICAgICAgICAgICAgICAgICAgIDxzdG9wIGlkPSJzdG9wMSIgc3RvcC1jb2xvcj0icmdiYSgyNDgsIDExNywgNTUsIDEpIiBvZmZzZXQ9IjAlIi8+CiAgICAgICAgICAgICAgICAgICAgICAgICAgICA8c3RvcCBpZD0ic3RvcDIiIHN0b3AtY29sb3I9InJnYmEoMjUxLCAxNjgsIDMxLCAxKSIgb2Zmc2V0PSIxMDAlIi8+CiAgICAgICAgICAgICAgICAgICAgICAgIDwvbGluZWFyR3JhZGllbnQ+CiAgICAgICAgICAgICAgICAgICAgPC9kZWZzPgogICAgICAgICAgICAgICAgPHBhdGggZmlsbD0idXJsKCNzdy1ncmFkaWVudCkiIGQ9Ik0xOS44LC0yOC4zQzI2LjEsLTIyLjYsMzIuMiwtMTcuNSwzMy4xLC0xMS41QzM0LC01LjUsMjkuOSwxLjQsMjYuNSw3LjVDMjMsMTMuNywyMC4zLDE5LDE2LDIyLjFDMTEuOCwyNS4yLDUuOSwyNi4yLC0xLjIsMjcuOUMtOC4zLDI5LjUsLTE2LjUsMzEuOCwtMjEuOCwyOUMtMjcuMSwyNi4yLC0yOS40LDE4LjIsLTMwLjUsMTAuOEMtMzEuNywzLjQsLTMxLjcsLTMuNSwtMzAuMiwtMTAuM0MtMjguNywtMTcuMiwtMjUuNiwtMjQsLTIwLjMsLTMwLjFDLTE1LC0zNi4xLC03LjUsLTQxLjMsLTAuNCwtNDAuOEM2LjcsLTQwLjMsMTMuNCwtMzQsMTkuOCwtMjguM1oiIHdpZHRoPSIxMDAlIiBoZWlnaHQ9IjEwMCUiIHRyYW5zZm9ybT0idHJhbnNsYXRlKDUwIDUwKSIgc3Ryb2tlLXdpZHRoPSIwIiBzdHlsZT0idHJhbnNpdGlvbjogYWxsIDAuM3MgZWFzZSAwczsiIHN0cm9rZT0idXJsKCNzdy1ncmFkaWVudCkiLz4KICAgICAgICAgICAgICA8L3N2Zz4=);
     
-    width: 35%;
-    margin-left: 5%;
+    width: 35vw;
+    height: 35vw;
+    margin-left: 4vw;
+
+    aspect-ratio: 1/1;
 }
 
 #mission-title {
@@ -112,6 +116,7 @@
     display: flex;
     flex-direction: row;
     align-items: center;
+    flex-wrap: wrap;
 }
 
 .leaders-visual h2 {
@@ -124,14 +129,11 @@
 .about-leaders:nth-of-type(odd) {
     --primary: var(--red);
     --secondary: var(--red-trans);
-}
-
-.about-leaders:nth-of-type(odd) {
     flex-direction: row-reverse;
 }
 
 .leaders-visual {
-    width: 100%;
+    width: 35%;
     position: relative;
     padding: 8px;
 }
@@ -222,6 +224,7 @@
     font: 15px 'trebuchet MS', 'lucida sans';
     padding: 0;
     text-shadow: 0 1px 0 rgba(255,255,255,.5);
+    width: 60%;
 }
 
 .rounded-list li {
@@ -402,6 +405,64 @@
 
 .flipped {
     transform: rotate(180deg);
+}
+
+/* #endregion */
+
+
+/* #region responsiveness */
+
+@media only screen and (max-width: 768px) {
+    .about-leaders {
+        flex-direction: column;
+    }
+
+    .about-leaders:nth-of-type(odd) {
+        flex-direction: column;
+    }
+
+    .leaders-visual {
+        width: 50%;
+    }
+
+    .rounded-list {
+        width: 90%;
+    }
+}
+
+@media only screen and (max-width: 620px) {
+    #mission-container img {
+        display: none;
+    }
+
+    #mission-text-wrapper {
+        width: 100%;
+        padding-right: 32px;
+    }
+
+    .leaders-visual {
+        width: 65%;
+    }
+
+    .rounded-list {
+        margin: 0;
+        width: 100%;
+    }
+
+    .rounded-list li {
+        font-size: 1rem;
+    }
+}
+
+@media only screen and (max-width: 428px) {
+    #team-title h1 {
+        font-size: 3rem;
+        margin-bottom: 16px;
+    }
+
+    .leaders-visual {
+        width: 75%;
+    }
 }
 
 /* #endregion */
