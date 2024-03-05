@@ -8,23 +8,30 @@
 }
 
 
+/* #region mission */
+
+
+
+/* #endregion */
+
+
 /* #region title */
 
-#title-container {
+#team-title {
     width: 100%;
     display: flex;
     justify-content: center;
     padding-top: 16px;
 }
 
-#title-container h1 {
+#team-title h1 {
     font-weight: 400;
     font-size: 3.5rem;
     width: fit-content;
     position: relative;
 }
 
-#title-container h1::before {
+#team-title h1::before {
     height: 4px;
     width: 100%;
     background-color: #000;
@@ -37,7 +44,7 @@
     transition: all 1s ease;
 }
 
-#title-container span {
+#team-title span {
     font-weight: 700;
     background: linear-gradient(to left, #00000000 50%, yellow 50%) right;
     background-size: 200% 100%;
@@ -45,12 +52,12 @@
     transition-delay: .1s;
 }
 
-#title-container:hover h1::before {
+#team-title:hover h1::before {
     transform: scaleX(1);
     transform-origin: right;
 }
 
-#title-container:hover span {
+#team-title:hover span {
     background-position: left;
 }
 
