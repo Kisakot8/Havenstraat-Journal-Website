@@ -7,9 +7,21 @@ eleventyComputed:
 ---
 
 <div id="about-container">
+
+    <div class="spacer flipped">
+        <img src="/assets/wave-brickred-white.svg" alt="A brick-red to white curve">
+    </div>
+
     <div id="mission-container">
-        <h1 id="mission-title">What is our mission?</h1>
-        <p id="mission-text">{{ getSecrets.mission_text }}</p>
+        <div id="mission-text-wrapper">
+            <h1 id="mission-title">What is our mission?</h1>
+            <pre id="mission-text">{{ getSecrets.mission_text }}</pre>
+        </div>
+        <img src="/assets/mission-img.webp" alt="A statue of a thinking man">
+    </div>
+
+    <div class="spacer">
+        <img src="/assets/wave-brickred-white.svg" alt="A brick-red to white curve">
     </div>
 
     <div id="team-title">
