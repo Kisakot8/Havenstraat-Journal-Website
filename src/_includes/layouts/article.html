@@ -2,6 +2,8 @@
     <title>{{ title }}</title>
 </head>
 
-<body style="height: 100%; width: 100%; overflow: hidden; margin:0px; background-color: rgb(51, 51, 51);">
-    <embed name="article" style="position:absolute; left: 0; top: 0;" width="100%" height="100%" src="{{ pagination.items[0].pdfUrl }}" type="application/pdf" internalid="article">
+<body style="padding: 0; margin: 0;">
+    <div style="overflow: auto; -webkit-overflow-scrolling: touch; height: 100%; width: 100%;" id="my">
+        <iframe src="{{ pagination.items[0].pdfUrl }}" style="overflow: auto; -webkit-overflow-scrolling: touch; border: none;" scrolling="yes" width="100%" height="100%"> </iframe>
+    </div>
 </body>
