@@ -1,11 +1,11 @@
 {
   "dependencies": {
-    "@sanity/vision": "^3.27.0",
+    "@sanity/vision": "^3.31.0",
     "ejs": "^3.1.9"
   },
   "devDependencies": {
-    "@11ty/eleventy-fetch": "^4.0.0",
+    "@11ty/eleventy-fetch": "^4.0.1",
     "common-tags": "^1.8.2",
-    "dotenv": "^16.4.1"
+    "dotenv": "^16.4.5"
   }
 }
