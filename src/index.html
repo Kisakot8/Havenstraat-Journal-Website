@@ -8,7 +8,7 @@ eleventyComputed:
 
 <div class="cards-container">
     {% for article in getCards.result %}
-        {% card article.title, article.imageUrl, article.tags, article.author, article.slug %}
+        {% card article.title, article.imageUrl, article.tags, article.author, article.pdfUrl %}
     {% endfor %}
 </div>
 

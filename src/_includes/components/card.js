@@ -1,9 +1,9 @@
 const {html} = require('common-tags');
 
-function card(title, imgUrl, tags, author, slug) {
+function card(title, imgUrl, tags, author, pdfUrl) {
     return html`
     <div class="card article"
-    onclick="window.open('/articles/${slug}/');"
+    onclick="window.open('${pdfUrl}');"
     data-tags="${tags.join(' ')}"
     data-author="${author.name}"
     >

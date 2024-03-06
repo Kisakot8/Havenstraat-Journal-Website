@@ -15,7 +15,7 @@ eleventyComputed:
     <div id="mission-container">
         <div id="mission-text-wrapper">
             <h1 id="mission-title">What is our mission?</h1>
-            <pre id="mission-text">{{ getSecrets.mission_text }}</pre>
+            <pre id="mission-text">{{ getSecrets.mission_text | replace("\\n", "\n") }}</pre>
         </div>
         <img src="/assets/mission-img.webp" alt="A statue of a thinking man">
     </div>
