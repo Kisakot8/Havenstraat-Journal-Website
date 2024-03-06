@@ -8,6 +8,6 @@ eleventyComputed:
 
 <div class="cards-container">
     {% for issue in getIssues.result %}
-        {% issueCard issue.number, issue.color, issue.imageUrl, issue.date %}
+        {% issueCard issue.number, issue.color, issue.imageUrl, issue.date, issue.pdfUrl %}
     {% endfor %}
 </div>

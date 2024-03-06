@@ -347,6 +347,10 @@ header {
         font-size: 1.4rem;
     }
 
+    #navbar-menu {
+        padding-bottom: 6rem;
+    }
+
     .mobile-icon {
         top: 20px;
         left: 8px;

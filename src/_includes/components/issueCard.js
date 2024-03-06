@@ -1,6 +1,6 @@
 const {html} = require('common-tags');
 
-function issueCard(number, color, imgUrl, numberDate) {
+function issueCard(number, color, imgUrl, numberDate, pdfUrl) {
     const [yyyy, mm, dd] = numberDate.split('-');
 
     const months = [
@@ -18,7 +18,7 @@ function issueCard(number, color, imgUrl, numberDate) {
     return html`
     <div class="card issue"
     id="issue-${number}"
-    onclick="window.open('/issues/${number}/');">
+    onclick="window.open('${pdfUrl}');">
         <div class="card-thumbnail-container">
             <img class="card-thumbnail" src=${imgUrl} alt="Issue thumbnail"></img>
         </div>
