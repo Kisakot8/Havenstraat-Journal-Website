@@ -2,6 +2,10 @@
     overflow: hidden;
 }
 
+#about-container > * {
+    margin: -1px 0;
+}
+
 #leaders-container {
     display: flex;
     flex-direction: column;
@@ -51,6 +55,7 @@
     text-justify: distribute;
     width: 100%;
     text-wrap: wrap;
+    word-wrap: break-word;
 }
 
 /* #endregion */
@@ -73,7 +78,7 @@
 }
 
 #team-title h1::before {
-    height: 4px;
+    height: 6px;
     width: 100%;
     background-color: #000;
     content: '';
@@ -394,8 +399,9 @@
 /* #region spacers */
 
 .spacer {
-    width: 100%;
+    width: 100vw;
     aspect-ratio: 900/100;
+    position: relative;
 }
 
 .spacer img {
