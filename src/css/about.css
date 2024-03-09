@@ -58,6 +58,8 @@
     width: 100%;
     text-wrap: wrap;
     word-wrap: break-word;
+    white-space: pre-wrap;
+    object-fit: contain;
 }
 
 /* #endregion */
