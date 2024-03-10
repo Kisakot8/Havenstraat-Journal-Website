@@ -24,12 +24,13 @@
 }
 
 body {
-    height: 100vh;
+    min-height: 100vh;
     background: #fff;
 }
 
 html, body {
-    overflow: auto;
+    overflow: visible;
+    min-height: -webkit-fill-available;
 }
 
 /* #endregion */
