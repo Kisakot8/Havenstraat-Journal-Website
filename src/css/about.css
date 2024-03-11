@@ -404,13 +404,8 @@
 
 /* #region spacers */
 
-.spacer {
-    background-color: aqua;
-}
-
 .spacer img {
-    width: 100%;
-    opacity: 0;
+    min-width: 101%;
 }
 
 .flipped {
