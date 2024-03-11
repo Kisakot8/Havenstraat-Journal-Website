@@ -31,7 +31,7 @@ footer {
 }
 
 .social-icons a i {
-    font-size: 2em;
+    font-size: 3.5vw;
     color: #000;
 }
 
@@ -58,7 +58,7 @@ footer {
     color: #000;
     margin: 20px;
     text-decoration: none;
-    font-size: 1.3em;
+    font-size: 1.6vw;
 }
 
 .footer-nav ul li a:hover {
@@ -74,6 +74,7 @@ footer {
     background-color: #fff;
     padding-bottom: 20px;
     text-align: center;
+    font-size: 1.25vw;
 }
 
 .footer-copyright p {

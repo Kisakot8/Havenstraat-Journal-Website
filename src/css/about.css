@@ -46,14 +46,14 @@
 
 #mission-title {
     text-transform: uppercase;
-    font-size: 3rem;
+    font-size: max(3rem, 3.75vw);
     margin: 12px 0;
     color: #eee;
 }
 
 #mission-text {
     color: #eee;
-    font-size: 1.15rem;
+    font-size: max(1.15rem, 1.43vw);
     text-justify: distribute;
     width: 100%;
     text-wrap: wrap;
@@ -76,7 +76,7 @@
 
 #team-title h1 {
     font-weight: 400;
-    font-size: 3.5rem;
+    font-size: max(3.5rem, 4.38vw);
     width: fit-content;
     position: relative;
 }
@@ -133,6 +133,7 @@
     margin-top: 12px;
     font-style: italic;
     color: #fff;
+    font-size: max(1.5rem, 1.88vw);
 }
 
 .about-leaders:nth-of-type(odd) {
@@ -166,6 +167,7 @@
 
 .leaders-visual img {
     transition: 1.2s all;
+    width: 100%;
 }
 
 .leaders-img-container:hover img {
@@ -197,7 +199,7 @@
 }
 
 .leaders-visual::before {
-    padding: 8px;
+    padding: max(8px, 0.625vw);
     aspect-ratio: 1/1;
     width: 100%;
     background: conic-gradient(var(--primary) var(--p1), var(--secondary) var(--p2));
@@ -238,7 +240,7 @@
 
 .rounded-list li {
     margin: 1rem;
-    font-size: 1.2rem;
+    font-size: max(1.2rem, 1.5vw);
     position: relative;
     display: block;
     padding: 1rem 1rem 1rem 2rem;
@@ -297,7 +299,7 @@
     justify-content: space-between;
     counter-reset: li;
     list-style: none;
-    font: 15px 'trebuchet MS', 'lucida sans';
+    font: max(1rem, 1.25vw) 'trebuchet MS', 'lucida sans';
     padding: 0;
     text-shadow: 0 1px 0 rgba(255, 255, 255, .5);
 }
@@ -383,7 +385,7 @@
 
 #authors-container h2 {
     text-align: center;
-    font-size: 2.4rem;
+    font-size: max(2.4rem, 3.5vw);
     color: #fff;
 }
 

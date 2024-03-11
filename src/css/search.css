@@ -62,15 +62,15 @@
 
 #search-box {
     margin: auto;
-    height: 64px;
-    width: 736px;
+    aspect-ratio: 736/64;
+    width: max(57vw, 736px);
     display: flex;
     padding: 10px 20px;
     justify-content: center;
     align-items: center;
     background-color: #fff;
-    border-radius: 30px;
-    border: 3px solid var(--blue);
+    border-radius: max(30px, 2.3vw);
+    border: max(3px, 0.23vw) solid var(--blue);
     transition: .2s all;
 }
 
@@ -87,13 +87,14 @@
     outline: none;
     border: none;
     width: 100%;
+    font-size: max(16px, 1.25vw);
 }
 
 #search-bar-icon {
     text-decoration: none;
     color: var(--blue);
     font-weight: 600;
-    font-size: 1.5rem;
+    font-size: max(1.5rem, 1.88vw);
     padding: 2px;
     transition: .2s all;
 }
@@ -130,7 +131,7 @@
     border-radius: 24px;
     height: fit-content;
     block-size: fit-content;
-    width: 280px;
+    width: max(22vw, 280px);
 }
 
 .checkbox-container {
@@ -157,13 +158,13 @@
 
 .checkmark {
     position: absolute;
-    top: 3px;
+    top: max(3px, 0.23vw);
     left: 0;
-    height: 16px;
-    width: 16px;
+    height: max(16px, 1.25vw);
+    aspect-ratio: 1/1;
     background-color: #eee;
-    border: 2px solid #999;
-    border-radius: 2px;
+    border: max(2px, 0.16vw) solid #999;
+    border-radius: max(2px, 0.16vw);
 }
 
 .checkbox-container:hover input ~ .checkmark {
@@ -186,12 +187,12 @@
 }
 
 .checkbox-container .checkmark:after {
-    left: 6px;
-    top: 3px;
-    width: 5px;
-    height: 8px;
+    left: max(6px, 0.47vw);
+    top: max(3px, 0.23vw);
+    width: max(5px, 0.39vw);
+    height: max(8px, 0.625vw);
     border: solid white;
-    border-width: 0 2px 2px 0;
+    border-width: 0 max(2px, 0.16vw) max(2px, 0.16vw) 0;
     -webkit-transform: rotate(45deg);
     -ms-transform: rotate(45deg);
     transform: rotate(45deg);
@@ -205,7 +206,7 @@
 }
 
 .input-title {
-    font-size: 1.2rem;
+    font-size: max(1.5vw, 1.2rem);
     font-weight: 700;
     letter-spacing: .1rem;
     color: #444;
@@ -218,9 +219,9 @@
 }
 
 .input-label {
-    margin-left: 6px;
+    margin-left: max(6px, 0.7vw);
     text-transform: capitalize;
-    font-size: 1rem;
+    font-size: max(1.25vw, 1rem);
     color: #111;
 }
 
@@ -290,12 +291,12 @@
 }
 
 #not-found h4 {
-    font-size: 2rem;
+    font-size: max(2rem, 2.5vw);
     text-align: center;
 }
 
 #not-found h4 i {
-    font-size: 3rem;
+    font-size: max(3rem, 3.75vw);
     font-weight: 900;
 }
 
@@ -303,10 +304,11 @@
     text-align: center;
     font-weight: 400;
     margin-bottom: 12px;
+    font-size: max(1rem, 1.25vw);
 }
 
 #not-found img {
-    height: 300px;
+    height: 50%;
     aspect-ratio: 9/10;
 }
 
