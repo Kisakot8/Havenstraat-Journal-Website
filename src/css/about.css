@@ -404,13 +404,8 @@
 
 /* #region spacers */
 
-.spacer {
-    left: 0;
-    width: 100%;
-}
-
 .spacer img {
-    min-width: 101%;
+    width: 105vw;
 }
 
 .flipped {
