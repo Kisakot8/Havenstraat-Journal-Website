@@ -49,7 +49,7 @@ eleventyComputed:
                         <span class="input-label"></span>
                     </label>
                 </div>
-                {% for author in getAuthors.result %}
+                {% for author in getAuthors.result | selectattr("isAuthor") | sort(false, false, "name") %}
                     <label class="checkbox-container">
                         <input type="checkbox" checked="checked" class="author-checkbox" data-author="{{ author.slug | slugify }}">
                         <span class="checkmark"></span>
@@ -85,7 +85,7 @@ eleventyComputed:
                     {% for tag in getTags.result %}
                         <span class="cycle-item">{{ tag }}</span>
                     {% endfor %}
-                    {% for author in getAuthors.result %}
+                    {% for author in getAuthors.result | selectattr("isAuthor") | sort(false, false, "name") %}
                         <span class="cycle-item">{{ author.name }}</span>
                     {% endfor %}
                     {% for issue in getIssues.result %}
