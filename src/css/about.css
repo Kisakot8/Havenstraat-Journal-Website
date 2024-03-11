@@ -404,8 +404,12 @@
 
 /* #region spacers */
 
+.spacer {
+    margin: -1px;
+}
+
 .spacer img {
-    width: 105vw;
+    width: 100%;
 }
 
 .flipped {
