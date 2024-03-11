@@ -405,7 +405,7 @@
 /* #region spacers */
 
 .spacer {
-    margin: -1px;
+    margin: -1px !important;
 }
 
 .spacer img {
