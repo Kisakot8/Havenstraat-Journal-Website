@@ -410,6 +410,7 @@
 
 .spacer img {
     width: 100%;
+    margin: -1px !important;
 }
 
 .flipped {
