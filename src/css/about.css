@@ -261,7 +261,7 @@
     margin-top: -1.3rem;
     background-color: #fff;
     height: 3rem;
-    aspect-ratio: 1/1;
+    width: 3rem;
     line-height: 2.5rem;
     border-radius: 2rem;
 }
@@ -275,7 +275,7 @@
     margin-top: -1.3rem;
     background-color: var(--secondary);
     height: 3rem;
-    aspect-ratio: 1/1;
+    width: 3rem;
     line-height: 2.5rem;
     border: .3rem solid #fff;
     text-align: center;
@@ -406,7 +406,7 @@
 
 .spacer {
     width: 100vw;
-    aspect-ratio: 900/100;
+    height: calc(100vw / 9);
     position: relative;
     margin: 0;
     padding: 0;
