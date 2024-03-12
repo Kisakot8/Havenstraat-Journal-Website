@@ -377,6 +377,19 @@ header {
     #mobile-close {
         font-size: 3rem;
     }
+
+    #navbar a {
+        font-size: 1.7rem;
+        height: 64px;
+    }
+
+    #navbar a:hover {
+        font-size: 1.8rem !important;
+    }
+
+    .current-section {
+        font-size: 1.8rem !important;
+    }
 }
 
 /* #endregion */
