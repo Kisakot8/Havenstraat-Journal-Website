@@ -10,6 +10,7 @@ eleventyComputed:
     currentSection: "{{ pagination.items | slugify }}"
     description: "{{ getSecrets.name }} {{ pagination.items | slugify }} page"
     title: "{{ getSecrets.name }}"
+    titlePrefix: "{{ pagination.items | slugify | capitalize }} - "
 ---
 
 <div class="cards-container">

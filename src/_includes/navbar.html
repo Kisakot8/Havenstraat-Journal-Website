@@ -26,10 +26,8 @@
     </nav>
     
     <script type="text/javascript">
-        if ('{{ currentSection }}' != '') {
-            const current = document.getElementById('{{ currentSection }}-link');
-            current.classList.add('current-section');
-        }
+        const current = document.getElementById('{{ currentSection }}-link');
+        current.classList.add('current-section');
     </script>
     
     <script src="/js/navbar.js"></script>    
