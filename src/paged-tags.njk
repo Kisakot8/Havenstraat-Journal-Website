@@ -14,9 +14,11 @@ eleventyComputed:
 ---
 
 <div class="cards-container">
-    {% for article in getCards.result %}
-        {% if article.tags.includes( pagination.items | slugify ) %}
-            {% card article.title, article.imageUrl, article.tags, article.author, article.pdfUrl %}
-        {% endif %}
+    {% for issue in getIssues.result | sort(true, false, "number") %}
+        {% for article in issue.articles %}
+            {% if article.tags.includes( pagination.items | slugify ) %}
+                {% card article.title, article.imageUrl, article.tags, article.author, article.pdfUrl %}
+            {% endif %}
+        {% endfor %}
     {% endfor %}
 </div>

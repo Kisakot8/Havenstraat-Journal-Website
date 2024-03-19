@@ -8,8 +8,10 @@ eleventyComputed:
 ---
 
 <div class="cards-container">
-    {% for article in getCards.result %}
-        {% card article.title, article.imageUrl, article.tags, article.author, article.pdfUrl %}
+    {% for issue in getIssues.result | sort(true, false, "number") %}
+        {% for article in issue.articles %}
+            {% card article.title, article.imageUrl, article.tags, article.author, article.pdfUrl %}
+        {% endfor %}
     {% endfor %}
 </div>
 
