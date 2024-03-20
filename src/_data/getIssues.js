@@ -23,7 +23,7 @@ async function getIssues () {
         "pdfUrl": articlePDF.asset->url,
         "tags": tags[]->name
     }
-}
+}  
 `
     );
 

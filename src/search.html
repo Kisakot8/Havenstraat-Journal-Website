@@ -11,7 +11,7 @@ eleventyComputed:
     <div id="upper-search-container">
         <div id="search-box">
             <input id="search-box-input" type="text" name="search" placeholder="Search {{ getCards.result.length }} articles... ">
-            <button id="search-bar-button" onclick="search('{{ getIssues.result | dump }}');">
+            <button id="search-bar-button" onclick="search(`{{ getIssues.result | dump }}`);">
                 <i class="fa-solid fa-magnifying-glass" id="search-bar-icon"></i>
             </button>
         </div>
