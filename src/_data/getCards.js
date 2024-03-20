@@ -16,9 +16,9 @@ async function getCards () {
     "imageUrl": thumbnail.asset->url,
     "pdfUrl": articlePDF.asset->url,
     "tags": tags[]->name
-    }
-`
-    );
+}
+
+    `);
 
     const URL = `https://${PROJECT_ID}.api.sanity.io/v2022-03-07/data/query/${DATASET}?query=${QUERY}`;
 

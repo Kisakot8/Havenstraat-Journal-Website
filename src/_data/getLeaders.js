@@ -18,8 +18,8 @@ async function getLeaders () {
     aboutDisplay,
     "imgUrl": photo.asset->url
 }
-`
-    );
+
+    `);
 
     const URL = `https://${PROJECT_ID}.api.sanity.io/v2022-03-07/data/query/${DATASET}?query=${QUERY}`;
 
