@@ -23,7 +23,7 @@ async function getCards () {
     const URL = `https://${PROJECT_ID}.api.sanity.io/v2022-03-07/data/query/${DATASET}?query=${QUERY}`;
 
     const response = EleventyFetch(URL, {
-        duration: "1d",
+        duration: "2d",
         type: "json"
     });
 
