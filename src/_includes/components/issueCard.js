@@ -30,6 +30,10 @@ function issueCard(number, color, imgUrl, numberDate, pdfUrl) {
         #issue-${number}:hover {
             box-shadow: 8px 8px 0 0 ${color} !important;
         }
+        
+        #issue-${number} {
+            order: -${number}
+        }
     </style>
     `
 }
