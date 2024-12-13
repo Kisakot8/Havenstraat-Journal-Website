@@ -24,18 +24,16 @@ async function getIssues () {
         "tags": tags[]->name
     }
 }
-
     `);
 
     const URL = `https://${PROJECT_ID}.api.sanity.io/v2022-03-07/data/query/${DATASET}?query=${QUERY}`;
 
     const response = EleventyFetch(URL, {
-        duration: "2d",
+        duration: "*",
         type: "json"
     });
 
-    const issues = response;
-    return issues;
+    return response;
 }
 
 module.exports = getIssues;

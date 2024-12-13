@@ -32,7 +32,7 @@ eleventyComputed:
                         <span class="input-label"></span>
                     </label>
                 </div>
-                {% for issue in getIssues.result %}
+                {% for issue in getIssues.result | sort(false, false, "number") %}
                     <label class="checkbox-container">
                         <input type="checkbox" checked="checked" class="issue-checkbox" data-issue="{{ issue.number }}">
                         <span class="checkmark"></span>

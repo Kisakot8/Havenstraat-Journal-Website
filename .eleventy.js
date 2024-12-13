@@ -15,6 +15,7 @@ module.exports = function(eleventyConfig) {
     eleventyConfig.addWatchTarget('src/js');
 
     // NOTE: components WILL NOT change on refresh if edited - need to restart server!
+
     eleventyConfig.addShortcode('card', card);
     eleventyConfig.addShortcode('test', test);
     eleventyConfig.addShortcode('tag', tag);
